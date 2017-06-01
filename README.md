@@ -1,29 +1,13 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Projeto desenvolvido na cadeira de Fundamentos de Programação Aplicada, PPGIA/DEINFO/UFRPE.
+Implementação de um aplicativo para simulação de Circuitos Quânticos.
 
-### How do I get set up? ###
+[Leia mais em:](https://lucianoserafim.bitbucket.io)
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Team ###
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Leonardo Souza.
+Luciano Serafim.
