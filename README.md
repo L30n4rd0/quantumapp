@@ -2,12 +2,11 @@
 
 ### What is this repository for? ###
 
-Projeto desenvolvido na cadeira de Fundamentos de Programação Aplicada, PPGIA/DEINFO/UFRPE.
-Implementação de um aplicativo para simulação de Circuitos Quânticos.
+* Projeto desenvolvido na cadeira de Fundamentos de Programação Aplicada, PPGIA/DEINFO/UFRPE. Implementação de um aplicativo para simulação de Circuitos Quânticos.
 
-[Leia mais em:](https://lucianoserafim.bitbucket.io)
+* [Leia mais](https://lucianoserafim.bitbucket.io)
 
 ### Team ###
 
-Leonardo Souza.
-Luciano Serafim.
+* Leonardo Souza.
+* Luciano Serafim.
