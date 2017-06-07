@@ -8,8 +8,15 @@
 
     <string name="action_settings">Settings</string>
     <string name="site">quantumapp.ufrpe.br</string>
-    <string name="functionality1">Functionality1</string>
-    <string name="functionality2">Functionality2</string>
+
+    <string name="quantumMenu">Quantum Computation</string>
+    <string name="quantumHistory">Quantum History</string>
+    <string name="quantumFundamentals">Quantum Fundamentals</string>
+
+    <string name="operatorsMenu">Operators</string>
+    <string name="operator1">operator1</string>
+    <string name="operator2">operator2</string>
+
     <string name="functionality3">Functionality3</string>
     <string name="functionality4">Functionality4</string>
     <string name="subMenuShare">Communicate</string>
