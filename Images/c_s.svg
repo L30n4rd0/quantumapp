@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt" height="111pt" viewBox="0 0 80 111" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 0.84375 3 L 0.84375 -11.984375 L 9.34375 -11.984375 L 9.34375 3 Z M 1.796875 2.0625 L 8.40625 2.0625 L 8.40625 -11.03125 L 1.796875 -11.03125 Z M 1.796875 2.0625 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 9.09375 -11.984375 L 9.09375 -10.34375 C 8.457031 -10.65625 7.859375 -10.882812 7.296875 -11.03125 C 6.734375 -11.175781 6.1875 -11.25 5.65625 -11.25 C 4.75 -11.25 4.046875 -11.070312 3.546875 -10.71875 C 3.054688 -10.363281 2.8125 -9.863281 2.8125 -9.21875 C 2.8125 -8.664062 2.972656 -8.25 3.296875 -7.96875 C 3.628906 -7.6875 4.253906 -7.460938 5.171875 -7.296875 L 6.1875 -7.09375 C 7.4375 -6.851562 8.359375 -6.429688 8.953125 -5.828125 C 9.546875 -5.234375 9.84375 -4.429688 9.84375 -3.421875 C 9.84375 -2.222656 9.4375 -1.3125 8.625 -0.6875 C 7.820312 -0.0703125 6.644531 0.234375 5.09375 0.234375 C 4.507812 0.234375 3.882812 0.164062 3.21875 0.03125 C 2.5625 -0.09375 1.878906 -0.285156 1.171875 -0.546875 L 1.171875 -2.28125 C 1.847656 -1.894531 2.515625 -1.601562 3.171875 -1.40625 C 3.828125 -1.21875 4.46875 -1.125 5.09375 -1.125 C 6.050781 -1.125 6.789062 -1.3125 7.3125 -1.6875 C 7.832031 -2.0625 8.09375 -2.597656 8.09375 -3.296875 C 8.09375 -3.898438 7.90625 -4.375 7.53125 -4.71875 C 7.15625 -5.0625 6.539062 -5.320312 5.6875 -5.5 L 4.671875 -5.6875 C 3.421875 -5.9375 2.515625 -6.328125 1.953125 -6.859375 C 1.398438 -7.390625 1.125 -8.128906 1.125 -9.078125 C 1.125 -10.171875 1.507812 -11.035156 2.28125 -11.671875 C 3.050781 -12.304688 4.113281 -12.625 5.46875 -12.625 C 6.050781 -12.625 6.644531 -12.566406 7.25 -12.453125 C 7.851562 -12.347656 8.46875 -12.191406 9.09375 -11.984375 Z M 9.09375 -11.984375 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface106652">
+<rect x="0" y="0" width="80" height="111" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 9.348125 9.348047 L 9.346953 13.246875 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 7.396172 9.346289 L 11.300078 9.35 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 7.395 13.245117 L 11.298711 13.248828 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<path style="fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 8.150078 12.119336 L 10.450078 12.119336 L 10.450078 14.280469 L 8.150078 14.280469 Z M 8.150078 12.119336 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="33.730469" y="94.205132"/>
+</g>
+<path style="fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 9.800078 9.275 C 9.800078 9.537305 9.598516 9.75 9.350078 9.75 C 9.101445 9.75 8.900078 9.537305 8.900078 9.275 C 8.900078 9.012695 9.101445 8.8 9.350078 8.8 C 9.598516 8.8 9.800078 9.012695 9.800078 9.275 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 9.031719 8.939062 L 9.668242 9.610937 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+<path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 9.031719 9.610937 L 9.668242 8.939062 " transform="matrix(20,0,0,20,-146.9,-175)"/>
+</g>
+</svg>
