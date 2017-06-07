@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61pt" height="59pt" viewBox="0 0 61 59" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 1.390625 4.953125 L 1.390625 -19.75 L 15.390625 -19.75 L 15.390625 4.953125 Z M 2.96875 3.390625 L 13.84375 3.390625 L 13.84375 -18.171875 L 2.96875 -18.171875 Z M 2.96875 3.390625 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 1.265625 0 L 1.265625 -0.984375 L 13.96875 -18.734375 L 3.421875 -18.734375 L 3.421875 -15.6875 L 1.734375 -15.6875 L 1.734375 -20.40625 L 17.875 -20.40625 L 17.875 -19.421875 L 5.15625 -1.6875 L 16.6875 -1.6875 L 16.6875 -4.546875 L 18.359375 -4.546875 L 18.359375 0 Z M 1.265625 0 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface26441">
+<rect x="0" y="0" width="61" height="59" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<path style="fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 5.31875 8.213867 L 8.3 8.213867 L 8.3 11.080664 L 5.31875 11.080664 Z M 5.31875 8.213867 " transform="matrix(20,0,0,20,-105.375,-163.277334)"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="21.007813" y="38.207357"/>
+</g>
+</g>
+</svg>
