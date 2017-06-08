@@ -1,27 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/quantumMenu">
+    <item android:title="@string/menu_quantum">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/sub_menu_history"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/quantumHistory" />
+                android:title="@string/sub_menu_history" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/sub_menu_fundamentals"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/quantumFundamentals" />
+                android:title="@string/sub_menu_fundamentals" />
         </menu>
     </item>
 
-    <item android:title="@string/operatorsMenu">
+    <item android:title="@string/menu_operators">
         <menu>
             <item
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/operator1" />
-            <item
+                android:id="@+id/sub_menu_hadamard"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/operator2" />
+                android:title="@string/sub_menu_hadamard" />
+            <item
+                android:id="@+id/sub_menu_pauli_x"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_pauli_x" />
+            <item
+                android:id="@+id/sub_menu_pauli_y"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_pauli_y" />
+            <item
+                android:id="@+id/sub_menu_pauli_z"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_pauli_z" />
+            <item
+                android:id="@+id/sub_menu_fase"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_fase" />
+            <item
+                android:id="@+id/sub_menu_pi_8"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_pi_8" />
+            <item
+                android:id="@+id/sub_menu_controled_not"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_controled_not" />
+            <item
+                android:id="@+id/sub_menu_controled_z"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_controled_z" />
+            <item
+                android:id="@+id/sub_menu_controled_phase"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_controled_phase" />
+            <item
+                android:id="@+id/sub_menu_swap"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_swap" />
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_about">
+        <menu>
+            <item
+                android:id="@+id/sub_menu_about_app"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/sub_menu_about_app" />
+            <item
+                android:id="@+id/sub_menu_about_team"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/sub_menu_about_team" />
         </menu>
     </item>
 
