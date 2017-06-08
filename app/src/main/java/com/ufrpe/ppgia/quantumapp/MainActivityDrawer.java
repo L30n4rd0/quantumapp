@@ -2,12 +2,8 @@ package com.ufrpe.ppgia.quantumapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.ufrpe.ppgia.quantumapp.fragments.ControledNotFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.ControledPhaseFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.SwapFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.ControledZFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.FaseFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.FundamentalsFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.HadamardFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.HistoryFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.Pi8Fragment;
 
 public class MainActivityDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,7 +85,7 @@ public class MainActivityDrawer extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            startActivity( new Intent(getApplicationContext(), SettingsActivity.class) );
 
             return true;
         }
@@ -111,8 +117,49 @@ public class MainActivityDrawer extends AppCompatActivity
                     .replace(R.id.fragment_container, fragment)
                     .commit();
 
-        }
+        } else if (id == R.id.sub_menu_pauli_matrix) {
+            fragment = new PauliFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
 
+        } else if (id == R.id.sub_menu_fase) {
+            fragment = new FaseFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_pi_8) {
+            fragment = new Pi8Fragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_controled_not) {
+            fragment = new ControledNotFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_controled_z) {
+            fragment = new ControledZFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_controled_phase) {
+            fragment = new ControledPhaseFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_swap) {
+            fragment = new SwapFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

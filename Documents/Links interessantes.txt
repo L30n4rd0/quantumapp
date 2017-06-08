@@ -1,0 +1,3 @@
+https://www.quantiki.org/wiki/list-qc-simulators -> lista de simuladores quanticos em várias linguagens.
+
+http://www.quide.eu/ -> The Quantum IDE

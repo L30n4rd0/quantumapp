@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  * Created by leonardo on 6/7/17.
  */
 
-public class HadamardFragment extends Fragment {
+public class PauliFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class HadamardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_hadamard, container, false);
+        View v = inflater.inflate(R.layout.fragment_pauli_matrix, container, false);
 
         return v;
     }

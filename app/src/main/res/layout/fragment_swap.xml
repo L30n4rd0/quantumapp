@@ -4,18 +4,18 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewTitleHadamard"
+        android:id="@+id/textViewSwapTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/sub_menu_hadamard"
+        android:text="@string/sub_menu_swap"
         android:textSize="24sp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textViewTitleHadamard"
+        android:layout_below="@+id/textViewSwapTitle"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:background="?attr/colorButtonNormal">
@@ -26,18 +26,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewHadamardText"
+                android:id="@+id/textViewFaseText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hadamard_text"
+                android:text="@string/swap_text"
                 android:textAlignment="center"
                 android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
 
         </LinearLayout>
     </ScrollView>

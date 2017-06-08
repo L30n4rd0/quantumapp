@@ -21,17 +21,17 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/sub_menu_hadamard" />
             <item
-                android:id="@+id/sub_menu_pauli_x"
+                android:id="@+id/sub_menu_pauli_matrix"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/sub_menu_pauli_x" />
-            <item
-                android:id="@+id/sub_menu_pauli_y"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/sub_menu_pauli_y" />
-            <item
-                android:id="@+id/sub_menu_pauli_z"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/sub_menu_pauli_z" />
+                android:title="@string/sub_menu_pauli_matrix" />
+            <!--<item-->
+                <!--android:id="@+id/sub_menu_pauli_y"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/sub_menu_pauli_y" />-->
+            <!--<item-->
+                <!--android:id="@+id/sub_menu_pauli_z"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="@string/sub_menu_pauli_z" />-->
             <item
                 android:id="@+id/sub_menu_fase"
                 android:icon="@drawable/ic_menu_send"

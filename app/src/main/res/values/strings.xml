@@ -15,7 +15,7 @@
 
     <string name="menu_operators">Operators</string>
     <string name="sub_menu_hadamard">Hadamard</string>
-    <string name="sub_menu_pauli_x">Pauli-X</string>
+    <string name="sub_menu_pauli_matrix">Pauli Matrix</string>
     <string name="sub_menu_pauli_y">Pauli-Y</string>
     <string name="sub_menu_pauli_z">Pauli-Z</string>
     <string name="sub_menu_fase">Fase</string>
@@ -30,45 +30,81 @@
     <string name="sub_menu_about_team">Team</string>
 
     <string name="quantum_computating_history_text">
-        <html>
-            <body>
-                <p>
-                    1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
-                <p>
-                    \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
-
-            </body>
-        </html>
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+        <p>
+            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
     </string>
 
     <string name="quantum_computating_fundamentals_text">
-        <html>
-            <body>
-                <p>
-                    1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
-                <p>
-                    \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
-
-            </body>
-        </html>
+       <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+        <p>
+            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
     </string>
 
-    <string name="quantum_computating_hadamard_text">
-        <html>
-            <body>
-                <p>
-                    1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
-                <p>
-                    \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
+    <string name="hadamard_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+        <p>
+            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+    </string>
 
-            </body>
-        </html>
+    <string name="pauli_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+        <p>
+            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+    </string>
+
+    <string name="fase_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
+    </string>
+
+    <string name="pi_8_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
+    </string>
+
+    <string name="controled_not_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
+    </string>
+
+    <string name="controled_z_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
+    </string>
+
+    <string name="controled_phase_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
+    </string>
+
+    <string name="swap_text">
+        <p>
+            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+
     </string>
 
     <string name="title_activity_settings">Settings</string>

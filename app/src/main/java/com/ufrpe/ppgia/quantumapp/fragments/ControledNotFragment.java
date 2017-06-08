@@ -1,4 +1,4 @@
-package com.ufrpe.ppgia.quantumapp;
+package com.ufrpe.ppgia.quantumapp.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ufrpe.ppgia.quantumapp.R;
+
 /**
  * Created by leonardo on 6/7/17.
  */
 
-public class FundamentalsFragment extends Fragment {
+public class ControledNotFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class FundamentalsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_fundamentals, container, false);
+        View v = inflater.inflate(R.layout.fragment_controled_not, container, false);
 
         return v;
     }
