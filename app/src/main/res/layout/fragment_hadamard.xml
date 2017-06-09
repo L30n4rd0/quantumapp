@@ -26,10 +26,45 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewHadamardText"
+                android:id="@+id/textViewHadamardTextParagrafoUm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hadamard_text"
+                android:layout_weight="1"
+                android:text="@string/hadamard_text_paragrafo_um"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imgViewHadamardDiagrama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_hadamard"
+                android:layout_margin="20dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textViewHadamardTextParagrafoDois"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hadamard_text_paragrafo_dois"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imgViewHadamardMatriz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_matriz_hadamard"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewHadamardTextParagrafoTres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hadamard_text_paragrafo_tres"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
