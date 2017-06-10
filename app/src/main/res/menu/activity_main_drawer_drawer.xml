@@ -5,11 +5,11 @@
         <menu>
             <item
                 android:id="@+id/sub_menu_history"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_quantum_computing_black"
                 android:title="@string/sub_menu_history" />
             <item
                 android:id="@+id/sub_menu_fundamentals"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_quantum_computing_black"
                 android:title="@string/sub_menu_fundamentals" />
         </menu>
     </item>
@@ -18,43 +18,36 @@
         <menu>
             <item
                 android:id="@+id/sub_menu_hadamard"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_hadamard"
                 android:title="@string/sub_menu_hadamard" />
             <item
                 android:id="@+id/sub_menu_pauli_matrix"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_pauli_x"
                 android:title="@string/sub_menu_pauli_matrix" />
-            <!--<item-->
-                <!--android:id="@+id/sub_menu_pauli_y"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="@string/sub_menu_pauli_y" />-->
-            <!--<item-->
-                <!--android:id="@+id/sub_menu_pauli_z"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="@string/sub_menu_pauli_z" />-->
+
             <item
                 android:id="@+id/sub_menu_fase"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_phase"
                 android:title="@string/sub_menu_fase" />
             <item
                 android:id="@+id/sub_menu_pi_8"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_pi_8"
                 android:title="@string/sub_menu_pi_8" />
             <item
                 android:id="@+id/sub_menu_controled_not"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_controled_not_icon"
                 android:title="@string/sub_menu_controled_not" />
             <item
                 android:id="@+id/sub_menu_controled_z"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_controled_z_icon"
                 android:title="@string/sub_menu_controled_z" />
             <item
                 android:id="@+id/sub_menu_controled_phase"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_controled_phase_icon"
                 android:title="@string/sub_menu_controled_phase" />
             <item
                 android:id="@+id/sub_menu_swap"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_operator_swap_icon"
                 android:title="@string/sub_menu_swap" />
         </menu>
     </item>

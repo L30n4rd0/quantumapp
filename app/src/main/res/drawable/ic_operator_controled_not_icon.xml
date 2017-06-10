@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="25.4"
+    android:viewportHeight="25.4"
+    android:width="96dp"
+    android:height="96dp">
+    <group
+        android:translateX="41.68861"
+        android:translateY="-98.66854">
+        <group
+            android:scaleX="1.18695"
+            android:scaleY="1.18695"
+            android:translateX="16.02971"
+            android:translateY="-22.83878">
+            <path
+                android:pathData="M-42.161045 118.96726l8.466665 0"
+                android:strokeWidth="0.7055555"
+                android:strokeLineJoin="miter"
+                android:strokeLineCap="butt"
+                android:strokeMiterLimit="10"
+                android:strokeColor="#000000" />
+            <path
+                android:pathData="M-33.69438 119.18259c0 2.33715 -1.89618 4.23334 -4.233332 4.23334 -2.338529 0 -4.233333 -1.89619 -4.233333 -4.23334 0 -2.33852 1.894804 -4.23333 4.233333 -4.23333 2.337152 0 4.233332 1.89481 4.233332 4.23333"
+                android:strokeWidth="0.7055555"
+                android:strokeLineJoin="miter"
+                android:strokeLineCap="butt"
+                android:strokeMiterLimit="10"
+                android:strokeColor="#000000" />
+            <path
+                android:pathData="M-37.927681 104.01456l0 19.20869"
+                android:strokeWidth="0.7542799"
+                android:strokeLineJoin="miter"
+                android:strokeLineCap="butt"
+                android:strokeMiterLimit="10"
+                android:strokeColor="#000000" />
+            <path
+                android:pathData="M-36.604796 103.69226c0 0.73054 -0.592554 1.32291 -1.322916 1.32291 -0.730931 0 -1.322917 -0.59237 -1.322917 -1.32291 0 -0.73056 0.591986 -1.32293 1.322917 -1.32293 0.730362 0 1.322916 0.59237 1.322916 1.32293"
+                android:fillColor="#000000"
+                android:strokeLineJoin="miter"
+                android:strokeLineCap="butt"
+                android:strokeMiterLimit="10" />
+        </group>
+    </group>
+</vector>

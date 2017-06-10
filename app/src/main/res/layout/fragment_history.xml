@@ -38,9 +38,9 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/ic_matriz_c_fase" />
+                app:srcCompat="@drawable/ic_matriz_c_phase" />
 
             <TextView
                 android:id="@+id/textView2"
