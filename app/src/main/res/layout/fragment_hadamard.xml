@@ -6,20 +6,14 @@
 
     <TextView
         android:id="@+id/textViewTitleHadamard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/textViewHeaderStyle"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/sub_menu_hadamard"
-        android:textSize="24sp" />
+        android:text="@string/sub_menu_hadamard" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/textViewTitleHadamard"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="?attr/colorButtonNormal">
+        style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,52 +22,28 @@
 
             <TextView
                 android:id="@+id/textViewHadamardTextParagrafoUm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/hadamard_text_paragrafo_um"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/textViewContentStyle"
+                android:text="@string/hadamard_text_paragrafo_um" />
 
             <ImageView
                 android:id="@+id/imgViewHadamardDiagrama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_matriz_hadamard"
-                android:layout_margin="20dp"
-                android:textAlignment="center" />
+                app:srcCompat="@drawable/ic_operator_hadamard"
+                style="@style/imageViewDefaultStyle" />
 
             <TextView
                 android:id="@+id/textViewHadamardTextParagrafoDois"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/hadamard_text_paragrafo_dois"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/textViewContentStyle" />
 
             <ImageView
                 android:id="@+id/imgViewHadamardMatriz"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_matriz_hadamard"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/imageViewDefaultStyle" />
 
             <TextView
                 android:id="@+id/textViewHadamardTextParagrafoTres"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/hadamard_text_paragrafo_tres"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                style="@style/textViewContentStyle" />
 
         </LinearLayout>
     </ScrollView>

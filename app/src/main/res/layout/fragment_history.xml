@@ -6,49 +6,30 @@
 
     <TextView
         android:id="@+id/textViewTitleHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="@string/sub_menu_history"
-        android:textSize="24sp" />
+        style="@style/textViewHeaderStyle" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/textViewTitleHistory"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="?attr/colorButtonNormal">
+        style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewHistoryText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/temp_string"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/textViewContentStyle" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_margin="10dp"
-                app:srcCompat="@drawable/ic_matriz_c_phase" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/quantum_computating_history_text"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                app:srcCompat="@drawable/ic_matriz_c_phase"
+                style="@style/imageViewDefaultStyle" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,21 +38,22 @@
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    style="@style/imageViewDefaultStyle"
                     android:layout_weight="2.38"
                     app:srcCompat="@drawable/ic_matriz_pauli_x" />
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    style="@style/imageViewDefaultStyle"
                     android:layout_weight="2.38"
                     app:srcCompat="@drawable/ic_matriz_pauli_y" />
 
             </LinearLayout>
 
-
+            <TextView
+                android:id="@+id/textView2"
+                android:text="@string/quantum_computating_history_text"
+                style="@style/textViewContentStyle" />
 
         </LinearLayout>
     </ScrollView>

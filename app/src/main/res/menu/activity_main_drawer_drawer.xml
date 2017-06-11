@@ -9,7 +9,7 @@
                 android:title="@string/sub_menu_history" />
             <item
                 android:id="@+id/sub_menu_fundamentals"
-                android:icon="@drawable/ic_quantum_computing_black"
+                android:icon="@drawable/ic_fundamentals_2"
                 android:title="@string/sub_menu_fundamentals" />
         </menu>
     </item>
@@ -56,11 +56,11 @@
         <menu>
             <item
                 android:id="@+id/sub_menu_about_app"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_about_app"
                 android:title="@string/sub_menu_about_app" />
             <item
                 android:id="@+id/sub_menu_about_team"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_team"
                 android:title="@string/sub_menu_about_team" />
         </menu>
     </item>

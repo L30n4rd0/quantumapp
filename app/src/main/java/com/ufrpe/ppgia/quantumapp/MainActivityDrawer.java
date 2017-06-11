@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.ufrpe.ppgia.quantumapp.fragments.ControledNotFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledPhaseFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.PauliFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.SwapFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledZFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.FaseFragment;
@@ -57,6 +58,11 @@ public class MainActivityDrawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        fragment = new HistoryFragment();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 
     @Override
