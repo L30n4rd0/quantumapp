@@ -5,20 +5,13 @@
 
     <TextView
         android:id="@+id/textViewTitleFundamentals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/sub_menu_fundamentals"
-        android:textSize="24sp" />
+        style="@style/textViewHeaderStyle" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/textViewTitleFundamentals"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="@color/colorBackgroundMain">
+        style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,11 +20,8 @@
 
             <TextView
                 android:id="@+id/textViewHistoryText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/quantum_computating_fundamentals_text"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/textViewContentStyle" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

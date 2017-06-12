@@ -9,9 +9,12 @@
     <string name="action_settings">Settings</string>
     <string name="site">quantumapp.ufrpe.br</string>
 
+    <string name="menu_circuit">Circuit</string>
+    <string name="sub_menu_circuit_editor">Circuit Editor</string>
+
     <string name="menu_quantum">Quantum Computating</string>
-    <string name="sub_menu_history">Quantum Computating History</string>
-    <string name="sub_menu_fundamentals">Quantum Fundamentals</string>
+    <string name="sub_menu_history">History</string>
+    <string name="sub_menu_fundamentals">Fundamentals</string>
 
     <string name="menu_operators">Operators</string>
     <string name="sub_menu_hadamard">Hadamard</string>
@@ -189,4 +192,5 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+
 </resources>

@@ -5,20 +5,13 @@
 
     <TextView
         android:id="@+id/textViewControledNotTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/sub_menu_controled_not"
-        android:textSize="24sp" />
+        style="@style/textViewHeaderStyle" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/textViewControledNotTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="@color/colorBackgroundMain">
+        style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,11 +20,8 @@
 
             <TextView
                 android:id="@+id/textViewFaseText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/controled_not_text"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                style="@style/textViewContentStyle" />
 
         </LinearLayout>
     </ScrollView>

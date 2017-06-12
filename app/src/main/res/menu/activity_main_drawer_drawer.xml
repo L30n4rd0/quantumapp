@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="@string/menu_circuit">
+        <menu>
+            <item
+                android:id="@+id/sub_menu_editor"
+                android:icon="@drawable/ic_quantum_computing_black"
+                android:title="@string/sub_menu_circuit_editor" />
+
+        </menu>
+    </item>
+
     <item android:title="@string/menu_quantum">
         <menu>
             <item
