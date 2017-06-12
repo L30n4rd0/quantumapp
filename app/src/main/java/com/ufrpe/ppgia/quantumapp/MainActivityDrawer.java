@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ufrpe.ppgia.quantumapp.fragments.AboutFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledNotFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledPhaseFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.PauliFragment;
@@ -50,10 +51,10 @@ public class MainActivityDrawer extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        fragment = new HistoryFragment();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container, fragment)
-//                .commit();
+        fragment = new AboutFragment();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 
     @Override
@@ -152,6 +153,12 @@ public class MainActivityDrawer extends AppCompatActivity
 
         } else if (id == R.id.sub_menu_swap) {
             fragment = new SwapFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_about_app) {
+            fragment = new AboutFragment();
             fragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, fragment)
                     .commit();

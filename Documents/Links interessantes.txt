@@ -5,3 +5,5 @@ http://www.quide.eu/ -> The Quantum IDE
 http://www.vectorization.org/ -> converter imgem png, jpge, ... para SVG.
 
 http://a-student.github.io/SvgToVectorDrawableConverter.Web/ -> converter imagens SVG para XML Android
+
+https://color.adobe.com/create/color-wheel/ -> seletor de cores da Adobe
