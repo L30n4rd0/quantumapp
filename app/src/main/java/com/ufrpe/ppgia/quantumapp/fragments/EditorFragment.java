@@ -76,12 +76,14 @@ public class EditorFragment extends Fragment {
         this.mImageViewPI8.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewSwap.setOnTouchListener(new MyOnTouchListener());
 
-        v.findViewById(R.id.fragment_circuit_editor).setOnDragListener(new MyOnDragListener());
+//        v.findViewById(R.id.fragment_circuit_editor).setOnDragListener(new MyOnDragListener());
 
-        ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(R.drawable.ic_operator_pauli_x);
+        v.findViewById(R.id.editor_layout).setOnDragListener(new MyOnDragListener());
 
-        this.mFragment_circuit_editor.addView(imageView);
+//        ImageView imageView = new ImageView(mContext);
+//        imageView.setImageResource(R.drawable.ic_operator_pauli_x);
+//
+//        this.mFragment_circuit_editor.addView(imageView);
 
         return v;
     }
@@ -179,9 +181,9 @@ public class EditorFragment extends Fragment {
                     imageView1.setMaxWidth(viewOnDragging.getWidth());
                     imageView1.setMaxHeight(viewOnDragging.getHeight());
 
-                    mFragment_circuit_editor.addView(imageView1);
+                    mViewEditorLayout.addView(imageView1);
 
-                    Log.i("InfoImage", viewOnDragging.getWidth() + "");
+                    Log.i("InfoImage", viewOnDragging.getId() + "");
 
 //                    textView.setVisibility(View.VISIBLE);
 
