@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import com.ufrpe.ppgia.quantumapp.fragments.AboutFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledNotFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledPhaseFragment;
+import com.ufrpe.ppgia.quantumapp.fragments.EditorFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.PauliFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.SwapFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledZFragment;
@@ -28,16 +29,16 @@ import com.ufrpe.ppgia.quantumapp.fragments.Pi8Fragment;
 public class MainActivityDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private FragmentManager fragmentManager;
-    private Fragment fragment;
+    private FragmentManager mFragmentManager;
+    private Fragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_drawer);
 
-        this.fragmentManager = getSupportFragmentManager();
-        this.fragment = fragmentManager.findFragmentById(R.id.fragment_container);
+        this.mFragmentManager = getSupportFragmentManager();
+        this.mFragment = mFragmentManager.findFragmentById(R.id.fragment_container);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,9 +52,9 @@ public class MainActivityDrawer extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        fragment = new AboutFragment();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
+        mFragment = new EditorFragment();
+        mFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, mFragment)
                 .commit();
     }
 
@@ -97,70 +98,76 @@ public class MainActivityDrawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.sub_menu_history) {
-            fragment = new HistoryFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+        if (id == R.id.sub_menu_editor) {
+            mFragment = new EditorFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_history) {
+            mFragment = new HistoryFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_fundamentals) {
-            fragment = new FundamentalsFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new FundamentalsFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_hadamard) {
-            fragment = new HadamardFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new HadamardFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_pauli_matrix) {
-            fragment = new PauliFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new PauliFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_fase) {
-            fragment = new FaseFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new FaseFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_pi_8) {
-            fragment = new Pi8Fragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new Pi8Fragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_controled_not) {
-            fragment = new ControledNotFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new ControledNotFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_controled_z) {
-            fragment = new ControledZFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new ControledZFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_controled_phase) {
-            fragment = new ControledPhaseFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new ControledPhaseFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_swap) {
-            fragment = new SwapFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new SwapFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         } else if (id == R.id.sub_menu_about_app) {
-            fragment = new AboutFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+            mFragment = new AboutFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
                     .commit();
 
         }
