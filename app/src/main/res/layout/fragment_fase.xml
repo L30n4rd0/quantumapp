@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/textViewFaseText"
-                android:text="@string/fase_text"
+                android:text="@string/"
                 style="@style/textViewContentStyle" />
 
         </LinearLayout>

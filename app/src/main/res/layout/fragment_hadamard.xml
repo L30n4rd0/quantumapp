@@ -38,12 +38,33 @@
             <ImageView
                 android:id="@+id/imgViewHadamardMatriz"
                 app:srcCompat="@drawable/ic_matriz_hadamard"
+                android:layout_height="35dp"
                 style="@style/imageViewDefaultStyle" />
 
             <TextView
                 android:id="@+id/textViewHadamardTextParagrafoTres"
                 android:text="@string/hadamard_text_paragrafo_tres"
                 style="@style/textViewContentStyle" />
+
+            <ImageView
+                android:id="@+id/imgViewHadamardNotacaoDirac"
+                app:srcCompat="@drawable/ic_hadamard_notacao_dirac"
+                style="@style/imageViewDefaultStyle" />
+
+            <TextView
+                android:id="@+id/textViewHadamardTextParagrafoQuatro"
+                android:text="@string/hadamard_text_paragrafo_quatro"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                android:id="@+id/imgViewHadamardAplicacaoZero"
+                app:srcCompat="@drawable/ic_aplicacao_hadamard_zero"
+                style="@style/imageViewDefaultStyle" />
+
+            <ImageView
+                android:id="@+id/imgViewHadamardAplicacaoUm"
+                app:srcCompat="@drawable/ic_aplicacao_hadamard_um"
+                style="@style/imageViewDefaultStyle" />
 
         </LinearLayout>
     </ScrollView>

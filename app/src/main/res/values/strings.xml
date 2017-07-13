@@ -21,7 +21,7 @@
     <string name="sub_menu_pauli_matrix">Pauli Matrix</string>
     <string name="sub_menu_pauli_y">Pauli-Y</string>
     <string name="sub_menu_pauli_z">Pauli-Z</string>
-    <string name="sub_menu_fase">Fase</string>
+    <string name="sub_menu_fase">Phase</string>
     <string name="sub_menu_pi_8">π/8</string>
     <string name="sub_menu_controled_not">Controled-NOT</string>
     <string name="sub_menu_controled_z">Controled-Z</string>
@@ -44,44 +44,47 @@
     </string>
 
     <string name="quantum_computating_fundamentals_text">
-       <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
-        <p>
-            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+        "Material is the metaphor.\n\n"
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
     </string>
 
     <string name="hadamard_text_paragrafo_um">
-        <p>
-            A porta de Hadarmard é uma das mais importantes da computação quântica. É representada pelo diagrama:
-        </p>
+        "Um operador importante para o conceito da superposição é o operador de hadamard. A sua aplicação"
+        "consegue-se a superposição de todos os possíveis valores armazenados em um registrador."
+        "Segue, abaixo a sua representação gráfica."
     </string>
     <string name="hadamard_text_paragrafo_dois">
-        <p>
-            Ao ser aplicada consegue-se a superposição de todos os possíveis valores armazenados em um registrador. Abaixo temos a sua matriz,
-        </p>
+        "A matriz que define este operador é mostrada a seguir."
     </string>
     <string name="hadamard_text_paragrafo_tres">
-        <p>
-            Parágrafo três.
-        </p>
+        " Temos também sua representação na notação de Dirac."
+    </string>
+    <string name="hadamard_text_paragrafo_quatro">
+        "Sua aplicação nos vetores da base computacional cria um estado em superposição"
+        "com leitura dos observáveis igualmente provável."
     </string>
 
-    <string name="pauli_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
-        <p>
-            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+    <string name="pauli_paragrafo_um">
+        "As matrizes de Pauli são úteis no estudo da computação e informação quântica."
+        "São matrizes complexas 2 x 2 hermitianas e unitárias, assim são definidas as matrizes de Pauli"
+        "Descrevem o spin de uma particula em um campo eletromagnético. Abaixo segue a representação gráfica das portasde Pauli-X, Pauli-Y e Pauli-Z."
     </string>
 
-    <string name="fase_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+    <string name="pauli_paragrafo_dois">
+        "Vejamos agora, as suas matrizes."
+    </string>
 
+    <string name="fase_paragrafo_um">
+        "..."
     </string>
 
     <string name="pi_8_text">

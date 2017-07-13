@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/textViewTitlePauli"
@@ -20,9 +21,74 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewPauliText"
+                android:id="@+id/textViewPauliParagrafoUm"
                 style="@style/textViewContentStyle"
-                android:text="@string/pauli_text" />
+                android:text="@string/pauli_paragrafo_um" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:id="@+id/imgViewPauliX"
+                    app:srcCompat="@drawable/ic_operator_pauli_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/imageViewDefaultStyle"/>
+
+                <ImageView
+                    android:id="@+id/imgViewPauliY"
+                    app:srcCompat="@drawable/ic_operator_pauli_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/imageViewDefaultStyle" />
+
+                <ImageView
+                    android:id="@+id/imgViewPauliZ"
+                    app:srcCompat="@drawable/ic_operator_pauli_z"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/imageViewDefaultStyle" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPauliParagrafoDois"
+                style="@style/textViewContentStyle"
+                android:text="@string/pauli_paragrafo_dois" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/imgViewMatrizPauliX"
+                app:srcCompat="@drawable/ic_matriz_pauli_x"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                style="@style/imageViewDefaultStyle" />
+
+            <ImageView
+                android:id="@+id/imgViewMatrizPauliY"
+                app:srcCompat="@drawable/ic_matriz_pauli_y"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                style="@style/imageViewDefaultStyle" />
+
+            <ImageView
+                android:id="@+id/imgViewMatrizPauliZ"
+                app:srcCompat="@drawable/ic_matriz_pauli_z"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                style="@style/imageViewDefaultStyle" />
+
+        </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
