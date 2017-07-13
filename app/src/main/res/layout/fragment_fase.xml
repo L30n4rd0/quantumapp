@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/textViewFaseText"
-                android:text="@string/"
+                android:text="@string/fase_paragrafo_um"
                 style="@style/textViewContentStyle" />
 
         </LinearLayout>
