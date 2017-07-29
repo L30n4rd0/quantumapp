@@ -2,40 +2,62 @@ package com.ufrpe.ppgia.quantumapp.fragments;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.ufrpe.ppgia.quantumapp.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by leonardo on 6/7/17.
  */
 
 public class EditorFragment extends Fragment {
-    private ConstraintLayout mViewEditorLayout, mFragment_circuit_editor;
+    private ConstraintLayout mViewCircuitTimeLine, mViewBottom, mViewTopLayout;//, mFragment_circuit_editor;
     private Context mContext;
+    private LayoutInflater mInflater;
+    private Button mButtonAlterQubitValue, mButtonDeleteQubit, mButtonAddQubit;
+    private static final int
+    ALTER_QUBIT_VALUE = 1, DELETE_QUBIT = 2, ADD_QUBIT = 3;
+    private int dialogOption = 0;
+    private AlertDialog mAlertDialog;
+    private AlertDialog.Builder mAlertDialogBuilder;
+
+    // Represents the circuit with qubits and operators
+    private List< List<ImageView> > mCircuit;
+
+    // Represents the circuit's first line
+    private List<ImageView> mFirstCircuitLine;
 
     private ImageView
             mImageViewHadamard,
-            mImageViewPI8,
-            mImageViewPhase,
             mImageViewPauliY,
             mImageViewPauliX,
             mImageViewPauliZ,
+            mImageViewPhase,
+            mImageViewPI8,
             mImageViewControledPhase,
             mImageViewControledZ,
             mImageViewControledNot,
-            mImageViewSwap;
+            mImageViewSwap,
+            mFirstQubit;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,47 +67,249 @@ public class EditorFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_circuit_editor, container, false);
 
-        this.mFragment_circuit_editor = (ConstraintLayout) v.findViewById(R.id.fragment_circuit_editor);
-        this.mViewEditorLayout = (ConstraintLayout) v.findViewById(R.id.editor_layout);
-        this.mContext = getActivity().getApplicationContext();
-
         // Instantiate members
+        this.mViewCircuitTimeLine = (ConstraintLayout) v.findViewById(R.id.circuitTimeLine);
+        this.mViewTopLayout = (ConstraintLayout) v.findViewById(R.id.topLayout);
+        this.mViewBottom = (ConstraintLayout) v.findViewById(R.id.bottomLayout);
+        this.mContext = inflater.getContext();
+        this.mInflater = inflater;
+
+        this.mFirstQubit = (ImageView) v.findViewById(R.id.imageViewFirstQubit);
+        this.mFirstQubit.setTag(R.id.qubit_value, 0);
+        this.mFirstQubit.setTag(R.id.xml_resource_id, R.drawable.ic_qubit_0);
+        this.mFirstQubit.setOnClickListener(new MyOnClickListenerQubit());
+//        this.mFirstQubit.setOnTouchListener(new MyOnTouchListenerQubit());
+//        this.mFirstQubit.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//
+//                Toast.makeText(mContext, "sdfsdfsdfsdf", Toast.LENGTH_LONG).show();
+//
+//                return false;
+//            }
+//        });
+
+
+        Button buttonSimulate = (Button) v.findViewById(R.id.buttonSimulate);
+        buttonSimulate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCircuitInDialog();
+            }
+        });
+
+        View dialogView = inflater.inflate(R.layout.layout_dialog, null);
+
+//        this.mButtonAddQubit = (Button) dialogView.findViewById(R.id.buttonAddQubit);
+//        this.mButtonAlterQubitValue = (Button) dialogView.findViewById(R.id.buttonAlterQubitValue);
+//        this.mButtonDeleteQubit = (Button) dialogView.findViewById(R.id.buttonDeleteQubit);
+
+        dialogView.findViewById(R.id.buttonAddQubit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("fsdfsdf", "add");
+                dialogOption = ADD_QUBIT;
+                mAlertDialog.dismiss();
+
+            }
+        });
+
+        dialogView.findViewById(R.id.buttonAlterQubitValue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("fsdfsdf", "alter");
+                dialogOption = ALTER_QUBIT_VALUE;
+                mAlertDialog.dismiss();
+
+            }
+        });
+
+        dialogView.findViewById(R.id.buttonDeleteQubit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("fsdfsdf", "delete");
+                dialogOption = DELETE_QUBIT;
+                mAlertDialog.dismiss();
+
+            }
+        });
+
+        this.mAlertDialogBuilder = new AlertDialog.Builder(mContext);
+        this.mAlertDialogBuilder.setView(dialogView);
+        this.mAlertDialogBuilder.setTitle("Opções");
+//        this.mAlertDialog = this.mAlertDialogBuilder.create();
+//        this.mAlertDialog.show();
+
+        this.mFirstCircuitLine = new ArrayList<>();
+        this.mCircuit = new ArrayList<>();
+
+        this.mFirstCircuitLine.add(this.mFirstQubit);
+
+        this.mCircuit.add(this.mFirstCircuitLine);
+
         this.mImageViewHadamard = (ImageView) v.findViewById(R.id.imageViewOperatorHadamard);
-        this.mImageViewControledNot = (ImageView) v.findViewById(R.id.imageViewOperatorControledNot);
-        this.mImageViewControledPhase = (ImageView) v.findViewById(R.id.imageViewOperatorControledPhase);
-        this.mImageViewControledZ = (ImageView) v.findViewById(R.id.imageViewOperatorControledZ);
         this.mImageViewPauliX = (ImageView) v.findViewById(R.id.imageViewOperatorPauliX);
         this.mImageViewPauliY = (ImageView) v.findViewById(R.id.imageViewOperatorPauliY);
         this.mImageViewPauliZ = (ImageView) v.findViewById(R.id.imageViewOperatorPauliZ);
         this.mImageViewPhase = (ImageView) v.findViewById(R.id.imageViewOperatorPhase);
         this.mImageViewPI8 = (ImageView) v.findViewById(R.id.imageViewOperatorPI8);
+        this.mImageViewControledNot = (ImageView) v.findViewById(R.id.imageViewOperatorControledNot);
+        this.mImageViewControledPhase = (ImageView) v.findViewById(R.id.imageViewOperatorControledPhase);
+        this.mImageViewControledZ = (ImageView) v.findViewById(R.id.imageViewOperatorControledZ);
         this.mImageViewSwap = (ImageView) v.findViewById(R.id.imageViewOperatorSwap);
+
+        // Setting tag xml_resource_id
+        this.mImageViewHadamard.setTag(R.id.xml_resource_id, R.drawable.ic_operator_hadamard);
+        this.mImageViewPauliX.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pauli_x);
+        this.mImageViewPauliY.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pauli_y);
+        this.mImageViewPauliZ.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pauli_z);
+        this.mImageViewPhase.setTag(R.id.xml_resource_id, R.drawable.ic_operator_phase);
+        this.mImageViewPI8.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pi_8);
+        this.mImageViewControledNot.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_not);
+        this.mImageViewControledPhase.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_phase);
+        this.mImageViewControledZ.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_z);
+        this.mImageViewSwap.setTag(R.id.xml_resource_id, R.drawable.ic_operator_swap);
+
+        // Setting tag operator_id
+        this.mImageViewHadamard.setTag(R.id.operator_id, 1);
+        this.mImageViewPauliX.setTag(R.id.operator_id, 2);
+        this.mImageViewPauliY.setTag(R.id.operator_id, 3);
+        this.mImageViewPauliZ.setTag(R.id.operator_id, 4);
+        this.mImageViewPhase.setTag(R.id.operator_id, 5);
+        this.mImageViewPI8.setTag(R.id.operator_id, 6);
+        this.mImageViewControledNot.setTag(R.id.operator_id, 7);
+        this.mImageViewControledPhase.setTag(R.id.operator_id, 8);
+        this.mImageViewControledZ.setTag(R.id.operator_id, 9);
+        this.mImageViewSwap.setTag(R.id.operator_id, 10);
 
         // Add OnTouchListener to Images View
         this.mImageViewHadamard.setOnTouchListener(new MyOnTouchListener());
-        this.mImageViewControledNot.setOnTouchListener(new MyOnTouchListener());
-        this.mImageViewControledPhase.setOnTouchListener(new MyOnTouchListener());
-        this.mImageViewControledZ.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewPauliX.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewPauliY.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewPauliZ.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewPhase.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewPI8.setOnTouchListener(new MyOnTouchListener());
+        this.mImageViewControledNot.setOnTouchListener(new MyOnTouchListener());
+        this.mImageViewControledPhase.setOnTouchListener(new MyOnTouchListener());
+        this.mImageViewControledZ.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewSwap.setOnTouchListener(new MyOnTouchListener());
 
 //        v.findViewById(R.id.fragment_circuit_editor).setOnDragListener(new MyOnDragListener());
 
-        v.findViewById(R.id.editor_layout).setOnDragListener(new MyOnDragListener());
+        v.findViewById(R.id.circuitTimeLine).setOnDragListener(new MyOnDragListener());
 
-//        ImageView imageView = new ImageView(mContext);
-//        imageView.setImageResource(R.drawable.ic_operator_pauli_x);
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true) {
+//                    Log.i("Info no while", mViewTopLayout.getY() + "");
 //
-//        this.mFragment_circuit_editor.addView(imageView);
+//                    try {
+//                        Thread.sleep(800);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//
+////                Log.i("Info no while", mViewTopLayout.getHeight() + "");
+//
+//            }
+//        }).start();
+
+
 
         return v;
+    }
+
+    private void showCircuitInDialog() {
+
+        String circuitString = "";
+        for (int i = 0; i < mFirstCircuitLine.size(); i++) {
+            if (i == 0) {
+//                Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
+                circuitString += mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + " ";
+
+            } else {
+//                Log.i("OperatorValue", mFirstCircuitLine.get(i).getTag(R.id.operator_id) + "");
+                circuitString += mFirstCircuitLine.get(i).getTag(R.id.operator_id) + " ";
+            }
+        }
+
+//        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
+//        alertDialogBuilder.setView(viewDialog);
+        alertDialogBuilder.setTitle("Circuito");
+        alertDialogBuilder.setMessage(circuitString);
+        alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+//        alertDialogBuilder.setNegativeButton((int) C0453R.string.button_cancel, new C04523());
+        alertDialogBuilder.create().show();
+    }
+
+    private void changeQubitValue (View v) {
+        if ( (int) v.getTag(R.id.qubit_value) == 0) {
+            v.setTag(R.id.qubit_value, 1);
+            v.setTag(R.id.xml_resource_id, R.drawable.ic_qubit_1);
+            ((ImageView) v).setImageResource(R.drawable.ic_qubit_1);
+
+        } else {
+            v.setTag(R.id.qubit_value, 0);
+            v.setTag(R.id.xml_resource_id, R.drawable.ic_qubit_0);
+            ((ImageView) v).setImageResource(R.drawable.ic_qubit_0);
+
+        }
+
+    }
+
+    // Internal and personal class for implement OnClickListener to qubits
+    class MyOnClickListenerQubit implements View.OnClickListener {
+
+        @Override
+        public void onClick(final View v) {
+
+//            mAlertDialog = mAlertDialogBuilder.create();
+//            mAlertDialog.show();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setTitle("Opções");
+            builder.setItems(new CharSequence[] {"ALTERAR VALOR", "APAGAR QUBIT", "ADICIONAR QUBIT"},
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // The 'which' argument contains the index position
+                            // of the selected item
+                            switch (which) {
+                                case 0:
+                                    Toast.makeText(mContext, "change value", Toast.LENGTH_LONG).show();
+
+                                    changeQubitValue(v);
+
+                                    break;
+
+                                case 1:
+                                    Toast.makeText(mContext, "clicked 2", Toast.LENGTH_LONG).show();
+                                    break;
+
+                                case 2:
+                                    Toast.makeText(mContext, "clicked 3", Toast.LENGTH_LONG).show();
+                                    break;
+
+                            }
+                        }
+                    });
+            builder.create().show();
+
+            Log.i("gggggggggggg", "fffffffffffffffffffff");
+
+
+        }
     }
 
     // Internal and personal class for implement TouchListener codes
@@ -93,12 +317,6 @@ public class EditorFragment extends Fragment {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-
-//            ImageView imageView1 = new ImageView(mContext);
-//            imageView1.setImageResource(R.drawable.ic_operator_pauli_x);
-//            imageView1.setX(v.getX() + 50);
-//
-//            mFragment_circuit_editor.addView(imageView1);
 
             // optional param used on startDragAndDrop method
             ClipData data = ClipData.newPlainText("imagem", "texto");
@@ -125,13 +343,11 @@ public class EditorFragment extends Fragment {
     // Internal and personal class for implement DragListener codes
     class MyOnDragListener implements View.OnDragListener {
         private  int action;
-        private View viewOnDragging, viewfragment_circuit_editor;
+        private View viewOnDragging; //, viewfragment_circuit_editor;
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
             action = event.getAction();
-
-            viewfragment_circuit_editor = LayoutInflater.from(getContext()).inflate(R.layout.fragment_circuit_editor, null);
 
             // Return the object view that started drag event
             viewOnDragging = (View) event.getLocalState();
@@ -147,11 +363,9 @@ public class EditorFragment extends Fragment {
                     break;
 
                 case DragEvent.ACTION_DRAG_LOCATION:
-                    Log.i("LOCATION", "executed");
-
-                    Log.i("ImgX", viewOnDragging.getX() + "");
-                    Log.i("ImgY", viewOnDragging.getY() + "");
-
+//                    Log.i("LOCATION", "executed");
+//                    Log.i("ImgX", viewOnDragging.getX() + "");
+//                    Log.i("ImgY", viewOnDragging.getY() + "");
                     break;
 
                 case DragEvent.ACTION_DRAG_EXITED:
@@ -165,27 +379,62 @@ public class EditorFragment extends Fragment {
                     String clipData = event.getClipDescription().getLabel().toString();
                     Log.i("Clip", clipData);
 
-                    // Setting new position to object view at time drop action
-//                    viewOnDragging.setX( event.getX() - (viewOnDragging.getWidth() / 2) );
-//                    viewOnDragging.setY( event.getY() - (viewOnDragging.getHeight() / 2) );
+//                    Log.i("viewOnDragging getY", viewOnDragging.getY() + "");
+//                    Log.i("W, H", mViewCircuitTimeLine.getLayoutParams().width + ", " + mViewCircuitTimeLine.getLayoutParams().height);
+
+//                    ImageView test = (ImageView) mViewCircuitTimeLine.findViewById(R.id.imageViewLine);
+//                    Log.i("imageViewLine getY", test.getY() + "");
+//                    Log.i("imageViewLine hegth", test.getHeight() + "");
+
+                    ImageView imageViewTemp = new ImageView(mContext);
+                    imageViewTemp.setImageResource((int) viewOnDragging.getTag(R.id.xml_resource_id));
+                    imageViewTemp.setTag(R.id.operator_id, viewOnDragging.getTag(R.id.operator_id));
+                    imageViewTemp.setLayoutParams(
+                            new ConstraintLayout.LayoutParams(
+                                    viewOnDragging.getWidth(),
+                                    viewOnDragging.getHeight()
+                            )
+                    );
+
+                    if (mFirstCircuitLine.size() == 1) {
+                        imageViewTemp.setX( 2f );
+                        imageViewTemp.setY( 0f );
+
+                        mViewCircuitTimeLine.setLayoutParams(
+                                new FrameLayout.LayoutParams(
+                                        mViewCircuitTimeLine.getLayoutParams().width + (9 * imageViewTemp.getLayoutParams().width),
+                                        mViewCircuitTimeLine.getLayoutParams().height + imageViewTemp.getLayoutParams().height
+                                )
+                        );
+
+                    } else {
+                        imageViewTemp.setX( mFirstCircuitLine.get(mFirstCircuitLine.size() - 1).getX() + mFirstCircuitLine.get(mFirstCircuitLine.size() - 1).getWidth() + 2  );
+                        imageViewTemp.setY( 0f );
+                    }
+
+                    Log.i("W, H", mViewCircuitTimeLine.getLayoutParams().width + ", " + mViewCircuitTimeLine.getLayoutParams().height);
+                    mViewCircuitTimeLine.addView(imageViewTemp);
+
+                    mFirstCircuitLine.add(imageViewTemp);
+
+                    Log.i("First", mFirstQubit.getLayoutParams().height + "");
+
+                    for (int i = 0; i < mFirstCircuitLine.size(); i++) {
+                        if (i == 0) {
+                            Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
+
+                        } else {
+                            Log.i("OperatorValue", mFirstCircuitLine.get(i).getTag(R.id.operator_id) + "");
+                        }
+                    }
+
+//                    Log.i("W H", mViewCircuitTimeLine.getLayoutParams().width + " " + mViewCircuitTimeLine.getLayoutParams().height);
+//
+//                    Log.i("viewOnDragging getY", viewOnDragging.getY() + "");
+//                    Log.i("viewOnDragging.getTag", viewOnDragging.getTag(R.id.xml_resource_id).toString());
 
                     // Setting object view to visible again
 //                    viewOnDragging.setVisibility(View.VISIBLE);
-
-//                    ViewGroup viewGroup = (ViewGroup) viewfragment_circuit_editor.findViewById(R.id.editor_layout);
-
-                    ImageView imageView1 = new ImageView(mContext);
-                    imageView1.setImageResource(R.drawable.ic_operator_pauli_x);
-                    imageView1.setX( event.getX() - (imageView1.getWidth() / 2) );
-                    imageView1.setY( event.getY() - (imageView1.getHeight() / 2) );
-                    imageView1.setMaxWidth(viewOnDragging.getWidth());
-                    imageView1.setMaxHeight(viewOnDragging.getHeight());
-
-                    mViewEditorLayout.addView(imageView1);
-
-                    Log.i("InfoImage", viewOnDragging.getId() + "");
-
-//                    textView.setVisibility(View.VISIBLE);
 
                     break;
 

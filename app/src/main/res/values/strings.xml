@@ -197,5 +197,6 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="sub_menu_about">About</string>
     <string name="about_text">About Text ...... test ... test</string>
+    <string name="button_simulate">Simular</string>
 
 </resources>
