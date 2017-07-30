@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ufrpe.ppgia.quantumapp.circuit.Complex;
 import com.ufrpe.ppgia.quantumapp.fragments.AboutFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledNotFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.ControledPhaseFragment;
