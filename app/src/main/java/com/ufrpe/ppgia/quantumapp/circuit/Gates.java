@@ -18,21 +18,19 @@ public class Gates {
 
 	}
 
-	public Matrix hadamard(Matrix ketZero, Matrix ketOne, int signal) {
+	public Matrix hadamard(Matrix matrix) {
 
 		Matrix C = null;
+		
+		double factor = 1 / Math.sqrt(2);
 
-		if (signal == 0) {
+		double[][] m = { { 1, 1 }, { 1, -1 } };
 
-			C = ketZero.plus(ketOne);
+		Matrix A = new Matrix(m);
 
-		} else {
+		C = A.times(matrix);
 
-			C = ketZero.minus(ketOne);
-
-		}
-
-		C = C.times(1 / Math.sqrt(2));
+		C = C.times(factor);
 
 		return C;
 
@@ -96,7 +94,7 @@ public class Gates {
 		Complex complex = new Complex(1, 1, 1);
 
 		double[][] matrix = { { 1, 0 },
-				{ 0, (Math.exp(complex.getImaginary() * Math.PI) / 4) } };
+				{ 0, Math.exp((complex.getImaginary() * Math.PI) / 4 ) } };
 
 		Matrix A = new Matrix(matrix);
 

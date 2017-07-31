@@ -2,6 +2,7 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import Jama.Matrix;
 
 public class Circuit {
@@ -14,39 +15,39 @@ public class Circuit {
 		/*
 		 * Classe que modela os qubits de cada linha do circuito
 		 */
-		Qubit qubit = new Qubit();
+		CircuitLine circuitLine = new CircuitLine();
 
 		/*
 		 * Método que seta o ket no objeto
 		 */
-		qubit.setKet(1);
+		circuitLine.setKet(1);
 
 		/*
 		 * Método para inserir ID das portas
 		 */
-		qubit.setListGates(2);
-		qubit.setListGates(2);
-		qubit.setListGates(3);
-		qubit.setListGates(4);
-		qubit.setListGates(5);
-		qubit.setListGates(6);
+		//circuitLine.setListGate(1);
+		//circuitLine.setListGate(2);
+		//circuitLine.setListGate(3);
+		//circuitLine.setListGate(4);
+		//circuitLine.setListGate(5);
+		//tListGates(6);
 
 		/*
 		 * Lista que recebe os qubits da tela do circuito.
 		 */
-		List<Qubit> listQubits = new ArrayList<>();
-		listQubits.add(qubit);
+		List<CircuitLine> listCircuitLines = new ArrayList<>();
+		listCircuitLines.add(circuitLine);
 		
 		/*
 		 * Os qubits são passados para máquina de estados e devolve uma matriz.
-		 * Caso seja melhor o objeto Qubit pode ser passado diretamente ou criado um laço para
+		 * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
 		 * percorrer a lista e fazer de forma iterativa.
 		 */
-		Matrix matrix = stateMachine.stateMachine(listQubits.get(0));
+		Matrix matrix = stateMachine.circuitCalculator(listCircuitLines.get(0));
 		
-		qubit.setResult(matrix);
+		circuitLine.setResult(matrix);
 
-		utils.printMatrix(qubit.getResult());
+		utils.printMatrix(circuitLine.getResult());
 
 	}
 }

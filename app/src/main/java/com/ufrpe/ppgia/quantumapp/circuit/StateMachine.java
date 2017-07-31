@@ -24,7 +24,7 @@ public class StateMachine {
 
 	}
 
-	public Matrix stateMachine(Qubit qubits) {
+	public Matrix circuitCalculator(CircuitLine qubits) {
 
 		Matrix matrix = null;
 
@@ -47,8 +47,7 @@ public class StateMachine {
 			// Porta de Hadamard
 			case 1:
 
-				matrix = gates.hadamard(ket.getKetZero(), ket.getKetZero(),
-						qubits.getKet());
+				matrix = gates.hadamard(matrix);
 
 				System.out.println("Hadamard");
 

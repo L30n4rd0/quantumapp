@@ -5,13 +5,13 @@ import java.util.List;
 
 import Jama.Matrix;
 
-public class Qubit {
+public class CircuitLine {
 
 	int ket;
 	Matrix result;
 	List<Integer> listGates;
 
-	public Qubit() {
+	public CircuitLine() {
 
 		listGates = new ArrayList<Integer>();
 
@@ -37,7 +37,7 @@ public class Qubit {
 		return listGates;
 	}
 
-	public void setListGates(Integer gates) {
+	public void setListGate(Integer gates) {
 		this.listGates.add(gates);
 	}
 

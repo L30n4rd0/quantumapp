@@ -12,13 +12,13 @@ public class Ket {
 	}
 
 	public Matrix getKetOne() {
-		double[][] zero = { { 1 }, { 0 } };
+		double[][] zero = { { 0 }, { 1 } };
 		ketZero = new Matrix(zero);
 		return ketZero;
 	}
 
 	public Matrix getKetZero() {
-		double[][] one = { { 0 }, { 1 } };
+		double[][] one = { { 1 }, { 0 } };
 		ketOne = new Matrix(one);
 		return ketOne;
 	}

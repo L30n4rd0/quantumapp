@@ -21,9 +21,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ufrpe.ppgia.quantumapp.R;
+import com.ufrpe.ppgia.quantumapp.circuit.CircuitLine;
+import com.ufrpe.ppgia.quantumapp.circuit.StateMachine;
+import com.ufrpe.ppgia.quantumapp.circuit.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Jama.Matrix;
 
 /**
  * Created by leonardo on 6/7/17.
@@ -227,23 +232,53 @@ public class EditorFragment extends Fragment {
 
     private void showCircuitInDialog() {
 
-        String circuitString = "";
-        for (int i = 0; i < mFirstCircuitLine.size(); i++) {
-            if (i == 0) {
-//                Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
-                circuitString += mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + " ";
+        /*
+         * Lista que recebe os qubits da tela do circuito.
+         */
+        List<Matrix> matrixResult = new ArrayList<>();
 
-            } else {
+        StateMachine stateMachine = StateMachine.getInstance();
+
+        Utils utils = Utils.getInstance();
+
+        for (int i = 0; i<mCircuit.size(); i++) {
+        /*
+         * Classe que modela os qubits de cada linha do circuito
+         */
+            CircuitLine circuitLine = new CircuitLine();
+
+            String circuitString = "";
+            for (int j = 0; j < mFirstCircuitLine.size(); j++) {
+                if (j == 0) {
+                    circuitLine.setKet((Integer) mFirstCircuitLine.get(j).getTag(R.id.qubit_value));
+//                Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
+                    //circuitString += mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + " ";
+
+                } else {
+                    circuitLine.setListGate((Integer) mFirstCircuitLine.get(j).getTag(R.id.operator_id));
 //                Log.i("OperatorValue", mFirstCircuitLine.get(i).getTag(R.id.operator_id) + "");
-                circuitString += mFirstCircuitLine.get(i).getTag(R.id.operator_id) + " ";
+                    //circuitString += mFirstCircuitLine.get(i).getTag(R.id.operator_id) + " ";
+                }
             }
+
+            /*
+                 * Os qubits são passados para máquina de estados e devolve uma matriz.
+                 * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
+                 * percorrer a lista e fazer de forma iterativa.
+                 */
+            Matrix matrix = stateMachine.circuitCalculator(circuitLine);
+
+            matrixResult.add(matrix);
+
+            utils.printMatrix(matrix);
+
         }
 
 //        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
         alertDialogBuilder.setTitle("Circuito");
-        alertDialogBuilder.setMessage(circuitString);
+        alertDialogBuilder.setMessage("33frgtgt");
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
