@@ -3,4 +3,5 @@
     <item type="id" name="operator_id" />
     <item type="id" name="xml_resource_id" />
     <item type="id" name="qubit_value" />
+    <item type="id" name="operator_location" />
 </resources>
