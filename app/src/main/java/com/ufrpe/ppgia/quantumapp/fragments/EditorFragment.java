@@ -234,7 +234,8 @@ public class EditorFragment extends Fragment {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
         alertDialogBuilder.setTitle("Circuito");
-        alertDialogBuilder.setMessage("33frgtgt");
+//        alertDialogBuilder.setMessage(matrixResult.get(0).get() + "");
+        alertDialogBuilder.setMessage("fffff");
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
