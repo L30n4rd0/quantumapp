@@ -191,51 +191,61 @@ public class EditorFragment extends Fragment {
         /*
          * Lista que recebe os qubits da tela do circuito.
          */
-        List<Matrix> matrixResult = new ArrayList<>();
+        List<Matrix> matrixResults = new ArrayList<>();
 
         StateMachine stateMachine = StateMachine.getInstance();
 
         Utils utils = Utils.getInstance();
 
-        for (int i = 0; i<mCircuit.size(); i++) {
-        /*
-         * Classe que modela os qubits de cada linha do circuito
-         */
+        for (List<ImageView> circuitLineImages: mCircuit) {
+
+            /*
+             * Classe que modela os qubits de cada linha do circuito
+             */
             CircuitLine circuitLine = new CircuitLine();
 
-            String circuitString = "";
-            for (int j = 0; j < mFirstCircuitLine.size(); j++) {
-                if (j == 0) {
-                    circuitLine.setKet((Integer) mFirstCircuitLine.get(j).getTag(R.id.qubit_value));
-//                Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
-                    //circuitString += mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + " ";
+            for (int j = 0; j < circuitLineImages.size(); j++) {
+                if (j != 0) {
+                    circuitLine.addGate((Integer) circuitLineImages.get(j).getTag(R.id.operator_id));
 
                 } else {
-                    circuitLine.setListGate((Integer) mFirstCircuitLine.get(j).getTag(R.id.operator_id));
-//                Log.i("OperatorValue", mFirstCircuitLine.get(i).getTag(R.id.operator_id) + "");
-                    //circuitString += mFirstCircuitLine.get(i).getTag(R.id.operator_id) + " ";
+                    circuitLine.setKet((Integer) circuitLineImages.get(j).getTag(R.id.qubit_value));
+
                 }
             }
 
             /*
-                 * Os qubits são passados para máquina de estados e devolve uma matriz.
-                 * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
-                 * percorrer a lista e fazer de forma iterativa.
-                 */
+             * Os qubits são passados para máquina de estados e devolve uma matriz.
+             * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
+             * percorrer a lista e fazer de forma iterativa.
+             */
             Matrix matrix = stateMachine.circuitCalculator(circuitLine);
 
-            matrixResult.add(matrix);
+            matrixResults.add(matrix);
 
-            utils.printMatrix(matrix);
+//            utils.printMatrix(matrix);
 
+        }
+
+        String stringResult = "";
+
+        for (Matrix matrix : matrixResults) {
+
+            for (int i = 0; i < matrix.getRowDimension(); i++) {
+
+                for (int j = 0; j < matrix.getColumnDimension(); j++) {
+
+                    stringResult += matrix.get(i, j) + "\n";
+
+                }
+            }
         }
 
 //        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
-        alertDialogBuilder.setTitle("Circuito");
-//        alertDialogBuilder.setMessage(matrixResult.get(0).get() + "");
-        alertDialogBuilder.setMessage("fffff");
+        alertDialogBuilder.setTitle("Circuito Resultado");
+        alertDialogBuilder.setMessage(stringResult);
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -353,6 +363,19 @@ public class EditorFragment extends Fragment {
                                     );
 
                                     Log.i("leftLayout.h", leftLayout.getLayoutParams().height + "");
+
+                                    ImageView imageViewLine = new ImageView(mContext);
+                                    imageViewLine.setImageResource(R.drawable.ic_line);
+                                    imageViewLine.setLayoutParams(
+                                            new ConstraintLayout.LayoutParams(
+                                                    21 * v.getWidth(),
+                                                    v.getHeight()
+                                            )
+                                    );
+                                    imageViewLine.setX(0f);
+                                    imageViewLine.setY(qubitTempImageView.getY());
+
+                                    mViewCircuitTimeLine.addView(imageViewLine);
 
                                     // Add new qubitImageView to layout
                                     leftLayout.addView(qubitTempImageView);

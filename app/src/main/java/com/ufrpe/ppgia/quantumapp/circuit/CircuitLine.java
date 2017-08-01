@@ -37,8 +37,8 @@ public class CircuitLine {
 		return listGates;
 	}
 
-	public void setListGate(Integer gates) {
-		this.listGates.add(gates);
+	public void addGate(Integer gate) {
+		this.listGates.add(gate);
 	}
 
 }
