@@ -37,7 +37,7 @@ import Jama.Matrix;
  */
 
 public class EditorFragment extends Fragment {
-    private ConstraintLayout mViewCircuitTimeLine, mViewBottom, mViewTopLayout;//, mFragment_circuit_editor;
+    private ConstraintLayout mViewCircuitTimeLine, mViewBottom, mLeftLayout, mViewTopLayout;//, mFragment_circuit_editor;
     private Context mContext;
     private LayoutInflater mInflater;
     private static final int OPERATOR_LOCATION_TOP = 1, OPERATOR_LOCATION_CIRCUIT = 2;
@@ -46,7 +46,9 @@ public class EditorFragment extends Fragment {
     private List< List<ImageView> > mCircuit;
 
     // Represents the circuit's first line
-    private List<ImageView> mFirstCircuitLine;
+    private List<ImageView>
+            mFirstCircuitLine,
+            mLinesAdded;
 
     private ImageView
             mImageViewHadamard,
@@ -76,6 +78,7 @@ public class EditorFragment extends Fragment {
         this.mViewCircuitTimeLine = (ConstraintLayout) v.findViewById(R.id.circuitTimeLine);
         this.mViewTopLayout = (ConstraintLayout) v.findViewById(R.id.topLayout);
         this.mViewBottom = (ConstraintLayout) v.findViewById(R.id.bottomLayout);
+        this.mLeftLayout = (ConstraintLayout) v.findViewById(R.id.leftLayout);
         this.mContext = inflater.getContext();
         this.mInflater = inflater;
 
@@ -84,14 +87,7 @@ public class EditorFragment extends Fragment {
         this.mFirstQubit.setTag(R.id.xml_resource_id, R.drawable.ic_qubit_0);
         this.mFirstQubit.setOnClickListener(new MyOnClickListenerQubit());
 
-        Button buttonSimulate = (Button) v.findViewById(R.id.buttonSimulate);
-        buttonSimulate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showCircuitInDialog();
-            }
-        });
-
+        this.mLinesAdded = new ArrayList<>();
         this.mFirstCircuitLine = new ArrayList<>();
         this.mCircuit = new ArrayList<>();
 
@@ -158,30 +154,15 @@ public class EditorFragment extends Fragment {
         this.mImageViewControledZ.setOnTouchListener(new MyOnTouchListener());
         this.mImageViewSwap.setOnTouchListener(new MyOnTouchListener());
 
-//        v.findViewById(R.id.fragment_circuit_editor).setOnDragListener(new MyOnDragListener());
-
         v.findViewById(R.id.circuitTimeLine).setOnDragListener(new MyOnDragListener());
 
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (true) {
-//                    Log.i("Info no while", mViewTopLayout.getY() + "");
-//
-//                    try {
-//                        Thread.sleep(800);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//
-////                Log.i("Info no while", mViewTopLayout.getHeight() + "");
-//
-//            }
-//        }).start();
-
-
+        Button buttonSimulate = (Button) v.findViewById(R.id.buttonSimulate);
+        buttonSimulate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCircuitInDialog();
+            }
+        });
 
         return v;
     }
@@ -271,6 +252,12 @@ public class EditorFragment extends Fragment {
 
     }
 
+    private void removeQubitFromCircuit(View qubitView) {
+
+
+
+    }
+
     // Internal and personal class for implement OnClickListener to qubits
     class MyOnClickListenerQubit implements View.OnClickListener {
 
@@ -296,7 +283,69 @@ public class EditorFragment extends Fragment {
                                     break;
 
                                 case 1:
-                                    Toast.makeText(mContext, "delete qubit", Toast.LENGTH_LONG).show();
+
+                                    if (v.equals(mCircuit.get(0).get(0))) {
+                                        Toast.makeText(mContext, "Não é possível apagar o primeiro Qubit!", Toast.LENGTH_LONG).show();
+
+                                    } else {
+
+                                        float yOld = -1f, yCurrent = -1f;
+
+                                        for (int i = 1; i < mCircuit.size(); i++) {
+                                            if ( v.equals(mCircuit.get(i).get(0)) ) {
+
+                                                yOld = mCircuit.get(i).get(0).getY();
+
+                                                for (int j = 0; j < mCircuit.get(i).size(); j++) {
+                                                    if (j != 0) {
+                                                        Log.i("Entrou", "remove view!");
+                                                        mViewCircuitTimeLine.removeView(mCircuit.get(i).get(j));
+
+                                                    } else {
+                                                        mLeftLayout.removeView(mCircuit.get(i).get(j));
+
+                                                    }
+                                                }
+
+                                                mViewCircuitTimeLine.removeView(mLinesAdded.get(mLinesAdded.size() - 1));
+                                                mCircuit.remove(mCircuit.get(i));
+//                                                break;
+                                            }
+
+                                            // Organizing circuit positions
+                                            if (yOld > 0 && i < mCircuit.size()) {
+                                                for (int j = 0; j < mCircuit.get(i).size(); j++) {
+
+                                                    yCurrent = mCircuit.get(i).get(j).getY();
+                                                    mCircuit.get(i).get(j).setY(yOld);
+                                                    yOld = yCurrent;
+
+                                                }
+                                            }
+                                        }
+
+                                        // Set new size to left layout according to circuit size
+                                        mLeftLayout.setLayoutParams(
+                                                new ConstraintLayout.LayoutParams(
+                                                        // Set same width
+                                                        mLeftLayout.getLayoutParams().width,
+                                                        // Set height
+                                                        (int) ( v.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
+                                                )
+                                        );
+
+                                        // Set new size to CircuitTimeLine layout according to circuit size
+                                        mViewCircuitTimeLine.setLayoutParams(
+                                                new FrameLayout.LayoutParams(
+                                                        // Set same width
+                                                        v.getWidth() * 21,
+                                                        // Set height
+                                                        (int) ( v.getHeight() * 1.5 * (mCircuit.size() + 1) )
+                                                )
+                                        );
+
+                                    }
+
                                     break;
 
                                 case 2:
@@ -343,26 +392,26 @@ public class EditorFragment extends Fragment {
                                     Log.i("Circuit size depois", mCircuit.size() + "");
 
                                     // Set new size to left layout according to circuit size
-                                    ConstraintLayout leftLayout = (ConstraintLayout) mViewBottom.findViewById(R.id.leftLayout);
-                                    leftLayout.setLayoutParams(
+                                    mLeftLayout.setLayoutParams(
                                             new ConstraintLayout.LayoutParams(
                                                     // Set same width
-                                                    leftLayout.getLayoutParams().width,
+                                                    mLeftLayout.getLayoutParams().width,
                                                     // Set height
                                                     (int) ( v.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
                                             )
                                     );
 
+                                    // Set new size to CircuitTimeLine layout according to circuit size
                                     mViewCircuitTimeLine.setLayoutParams(
                                             new FrameLayout.LayoutParams(
                                                     // Set same width
-                                                    v.getLayoutParams().width * 20,
+                                                    v.getWidth() * 21,
                                                     // Set height
-                                                    (int) ( v.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
+                                                    (int) ( v.getHeight() * 1.5 * (mCircuit.size() + 1) )
                                             )
                                     );
 
-                                    Log.i("leftLayout.h", leftLayout.getLayoutParams().height + "");
+                                    Log.i("leftLayout.h", mLeftLayout.getLayoutParams().height + "");
 
                                     ImageView imageViewLine = new ImageView(mContext);
                                     imageViewLine.setImageResource(R.drawable.ic_line);
@@ -377,8 +426,10 @@ public class EditorFragment extends Fragment {
 
                                     mViewCircuitTimeLine.addView(imageViewLine);
 
+                                    mLinesAdded.add(imageViewLine);
+
                                     // Add new qubitImageView to layout
-                                    leftLayout.addView(qubitTempImageView);
+                                    mLeftLayout.addView(qubitTempImageView);
 
                                     break;
 
@@ -470,13 +521,6 @@ public class EditorFragment extends Fragment {
                     String clipData = event.getClipDescription().getLabel().toString();
                     Log.i("Clip", clipData);
 
-//                    Log.i("viewOnDragging getY", viewOnDragging.getY() + "");
-//                    Log.i("W, H", mViewCircuitTimeLine.getLayoutParams().width + ", " + mViewCircuitTimeLine.getLayoutParams().height);
-
-//                    ImageView test = (ImageView) mViewCircuitTimeLine.findViewById(R.id.imageViewLine);
-//                    Log.i("imageViewLine getY", test.getY() + "");
-//                    Log.i("imageViewLine hegth", test.getHeight() + "");
-
                     if ( (int) viewOnDragging.getTag(R.id.operator_location) == OPERATOR_LOCATION_TOP) {
 
                         // *** Setting attributes to new ImageView operator
@@ -491,7 +535,6 @@ public class EditorFragment extends Fragment {
                         );
 
                         // Setting location attribute
-
                         float
                                 // X para setar na imagem com uma borda de 5 pixels ao redor da imagem
                                 xTemp = event.getX() - ( (operatorTempImageView.getLayoutParams().width + 10) / 2 ),
@@ -563,7 +606,7 @@ public class EditorFragment extends Fragment {
                             mViewCircuitTimeLine.setLayoutParams(
                                     new FrameLayout.LayoutParams(
                                             operatorTempImageView.getLayoutParams().width * 20,
-                                            operatorTempImageView.getLayoutParams().height * 2
+                                            (int) (operatorTempImageView.getLayoutParams().height * 1.5)
                                     )
                             );
 
