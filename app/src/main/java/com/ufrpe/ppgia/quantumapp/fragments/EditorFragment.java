@@ -85,14 +85,16 @@ public class EditorFragment extends Fragment {
         this.mFirstQubit = (ImageView) v.findViewById(R.id.imageViewFirstQubit);
         this.mFirstQubit.setTag(R.id.qubit_value, 0);
         this.mFirstQubit.setTag(R.id.xml_resource_id, R.drawable.ic_qubit_0);
+        this.mFirstQubit.setX(0f);
+        this.mFirstQubit.setY(0f);
         this.mFirstQubit.setOnClickListener(new MyOnClickListenerQubit());
 
         this.mLinesAdded = new ArrayList<>();
-        this.mFirstCircuitLine = new ArrayList<>();
-        this.mCircuit = new ArrayList<>();
 
+        this.mFirstCircuitLine = new ArrayList<>();
         this.mFirstCircuitLine.add(this.mFirstQubit);
 
+        this.mCircuit = new ArrayList<>();
         this.mCircuit.add(this.mFirstCircuitLine);
 
         this.mImageViewHadamard = (ImageView) v.findViewById(R.id.imageViewOperatorHadamard);
@@ -222,11 +224,26 @@ public class EditorFragment extends Fragment {
             }
         }
 
+        String stringCircuitStatus = "";
+        for (int i = 0; i < mCircuit.size(); i++) {
+            for (int j = 0; j < mCircuit.get(i).size(); j++) {
+                if (j != 0) {
+                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.operator_id) + " ";
+
+                } else {
+                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.qubit_value) + " ";
+
+                }
+            }
+            stringCircuitStatus += "\n";
+
+        }
+
 //        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
         alertDialogBuilder.setTitle("Circuito Resultado");
-        alertDialogBuilder.setMessage(stringResult);
+        alertDialogBuilder.setMessage(stringCircuitStatus + "\n .............................\n" + stringResult);
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -254,7 +271,66 @@ public class EditorFragment extends Fragment {
 
     private void removeQubitFromCircuit(View qubitView) {
 
+        if (qubitView.equals(mCircuit.get(0).get(0))) {
+            Toast.makeText(mContext, "Não é possível apagar o primeiro Qubit!", Toast.LENGTH_LONG).show();
 
+        } else {
+
+            float yOld = -1f, yCurrent = -1f;
+
+            for (int i = 1; i < mCircuit.size(); i++) {
+                if ( qubitView.equals(mCircuit.get(i).get(0)) ) {
+
+                    yOld = mCircuit.get(i).get(0).getY();
+
+                    for (int j = 0; j < mCircuit.get(i).size(); j++) {
+                        if (j != 0) {
+                            mViewCircuitTimeLine.removeView(mCircuit.get(i).get(j));
+
+                        } else {
+                            mLeftLayout.removeView(mCircuit.get(i).get(j));
+
+                        }
+                    }
+
+                    mViewCircuitTimeLine.removeView(mLinesAdded.get(mLinesAdded.size() - 1));
+                    mCircuit.remove(mCircuit.get(i));
+
+                }
+
+                // Organizing circuit positions
+                if (yOld > 0 && i < mCircuit.size()) {
+                    for (int j = 0; j < mCircuit.get(i).size(); j++) {
+
+                        yCurrent = mCircuit.get(i).get(j).getY();
+                        mCircuit.get(i).get(j).setY(yOld);
+                        yOld = yCurrent;
+
+                    }
+                }
+            }
+
+            // Set new size to left layout according to circuit size
+            mLeftLayout.setLayoutParams(
+                    new ConstraintLayout.LayoutParams(
+                            // Set same width
+                            mLeftLayout.getLayoutParams().width,
+                            // Set height
+                            (int) ( qubitView.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
+                    )
+            );
+
+            // Set new size to CircuitTimeLine layout according to circuit size
+            mViewCircuitTimeLine.setLayoutParams(
+                    new FrameLayout.LayoutParams(
+                            // Set same width
+                            qubitView.getWidth() * 21,
+                            // Set height
+                            (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
+                    )
+            );
+
+        }
 
     }
 
@@ -262,7 +338,7 @@ public class EditorFragment extends Fragment {
     class MyOnClickListenerQubit implements View.OnClickListener {
 
         @Override
-        public void onClick(final View v) {
+        public void onClick(final View qubitView) {
 
 //            mAlertDialog = mAlertDialogBuilder.create();
 //            mAlertDialog.show();
@@ -275,161 +351,22 @@ public class EditorFragment extends Fragment {
                             // The 'which' argument contains the index position
                             // of the selected item
                             switch (which) {
-                                case 0:
+                                case 0: // Alter qubit value
                                     Toast.makeText(mContext, "change value", Toast.LENGTH_LONG).show();
 
-                                    changeQubitValue(v);
+                                    changeQubitValue(qubitView);
 
                                     break;
 
-                                case 1:
+                                case 1: // Delete qubit
 
-                                    if (v.equals(mCircuit.get(0).get(0))) {
-                                        Toast.makeText(mContext, "Não é possível apagar o primeiro Qubit!", Toast.LENGTH_LONG).show();
-
-                                    } else {
-
-                                        float yOld = -1f, yCurrent = -1f;
-
-                                        for (int i = 1; i < mCircuit.size(); i++) {
-                                            if ( v.equals(mCircuit.get(i).get(0)) ) {
-
-                                                yOld = mCircuit.get(i).get(0).getY();
-
-                                                for (int j = 0; j < mCircuit.get(i).size(); j++) {
-                                                    if (j != 0) {
-                                                        Log.i("Entrou", "remove view!");
-                                                        mViewCircuitTimeLine.removeView(mCircuit.get(i).get(j));
-
-                                                    } else {
-                                                        mLeftLayout.removeView(mCircuit.get(i).get(j));
-
-                                                    }
-                                                }
-
-                                                mViewCircuitTimeLine.removeView(mLinesAdded.get(mLinesAdded.size() - 1));
-                                                mCircuit.remove(mCircuit.get(i));
-//                                                break;
-                                            }
-
-                                            // Organizing circuit positions
-                                            if (yOld > 0 && i < mCircuit.size()) {
-                                                for (int j = 0; j < mCircuit.get(i).size(); j++) {
-
-                                                    yCurrent = mCircuit.get(i).get(j).getY();
-                                                    mCircuit.get(i).get(j).setY(yOld);
-                                                    yOld = yCurrent;
-
-                                                }
-                                            }
-                                        }
-
-                                        // Set new size to left layout according to circuit size
-                                        mLeftLayout.setLayoutParams(
-                                                new ConstraintLayout.LayoutParams(
-                                                        // Set same width
-                                                        mLeftLayout.getLayoutParams().width,
-                                                        // Set height
-                                                        (int) ( v.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
-                                                )
-                                        );
-
-                                        // Set new size to CircuitTimeLine layout according to circuit size
-                                        mViewCircuitTimeLine.setLayoutParams(
-                                                new FrameLayout.LayoutParams(
-                                                        // Set same width
-                                                        v.getWidth() * 21,
-                                                        // Set height
-                                                        (int) ( v.getHeight() * 1.5 * (mCircuit.size() + 1) )
-                                                )
-                                        );
-
-                                    }
+                                    removeQubitFromCircuit(qubitView);
 
                                     break;
 
-                                case 2:
-                                    Toast.makeText(mContext, "add qubit", Toast.LENGTH_LONG).show();
+                                case 2: // Add qubit
 
-                                    // Create new ImageView to new Qubit
-                                    ImageView qubitTempImageView = new ImageView(mContext);
-
-                                    // *** Setting attributes to new ImageView operator
-                                    qubitTempImageView.setImageResource((int) v.getTag(R.id.xml_resource_id));
-                                    qubitTempImageView.setTag(R.id.xml_resource_id, v.getTag(R.id.xml_resource_id));
-                                    qubitTempImageView.setTag(R.id.qubit_value, v.getTag(R.id.qubit_value));
-                                    qubitTempImageView.setLayoutParams(
-                                            new ConstraintLayout.LayoutParams(
-                                                    v.getWidth(),
-                                                    v.getHeight()
-                                            )
-                                    );
-
-                                    // Setting location attribute
-
-                                    float
-                                        yLastQubitAdded = mCircuit.get(mCircuit.size() - 1).get(0).getY(),
-                                        yImage = (float) ( yLastQubitAdded + (v.getHeight() * 1.5) );
-
-                                    qubitTempImageView.setX( 0 );
-                                    qubitTempImageView.setY( yImage );
-
-                                    // Set OnClickListener
-                                    qubitTempImageView.setOnClickListener(new MyOnClickListenerQubit());
-
-                                    Log.i("ImgX", qubitTempImageView.getX() + "");
-                                    Log.i("ImgY", qubitTempImageView.getY() + "");
-
-                                    // Create new circuit line
-                                    List<ImageView> newCircuitLine = new ArrayList<>();
-
-                                    // Add new qubitImageView to new circuit line
-                                    newCircuitLine.add(qubitTempImageView);
-
-                                    Log.i("Circuit size antes", mCircuit.size() + "");
-                                    // Add newCircuitLine to circuit
-                                    mCircuit.add(newCircuitLine);
-                                    Log.i("Circuit size depois", mCircuit.size() + "");
-
-                                    // Set new size to left layout according to circuit size
-                                    mLeftLayout.setLayoutParams(
-                                            new ConstraintLayout.LayoutParams(
-                                                    // Set same width
-                                                    mLeftLayout.getLayoutParams().width,
-                                                    // Set height
-                                                    (int) ( v.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
-                                            )
-                                    );
-
-                                    // Set new size to CircuitTimeLine layout according to circuit size
-                                    mViewCircuitTimeLine.setLayoutParams(
-                                            new FrameLayout.LayoutParams(
-                                                    // Set same width
-                                                    v.getWidth() * 21,
-                                                    // Set height
-                                                    (int) ( v.getHeight() * 1.5 * (mCircuit.size() + 1) )
-                                            )
-                                    );
-
-                                    Log.i("leftLayout.h", mLeftLayout.getLayoutParams().height + "");
-
-                                    ImageView imageViewLine = new ImageView(mContext);
-                                    imageViewLine.setImageResource(R.drawable.ic_line);
-                                    imageViewLine.setLayoutParams(
-                                            new ConstraintLayout.LayoutParams(
-                                                    21 * v.getWidth(),
-                                                    v.getHeight()
-                                            )
-                                    );
-                                    imageViewLine.setX(0f);
-                                    imageViewLine.setY(qubitTempImageView.getY());
-
-                                    mViewCircuitTimeLine.addView(imageViewLine);
-
-                                    mLinesAdded.add(imageViewLine);
-
-                                    // Add new qubitImageView to layout
-                                    mLeftLayout.addView(qubitTempImageView);
+                                    addQubitToCircuit(qubitView);
 
                                     break;
 
@@ -439,9 +376,91 @@ public class EditorFragment extends Fragment {
 
             builder.create().show();
 
-            Log.i("height", "" + v.getLayoutParams().height);
-
         }
+    }
+
+    private void addQubitToCircuit(View qubitView) {
+
+        // Create new ImageView to new Qubit
+        ImageView qubitTempImageView = new ImageView(mContext);
+
+        // *** Setting attributes to new ImageView operator
+        qubitTempImageView.setImageResource((int) qubitView.getTag(R.id.xml_resource_id));
+        qubitTempImageView.setTag(R.id.xml_resource_id, qubitView.getTag(R.id.xml_resource_id));
+        qubitTempImageView.setTag(R.id.qubit_value, qubitView.getTag(R.id.qubit_value));
+        qubitTempImageView.setLayoutParams(
+                new ConstraintLayout.LayoutParams(
+                        qubitView.getWidth(),
+                        qubitView.getHeight()
+                )
+        );
+
+        // Setting location attribute
+
+        float
+                yLastQubitAdded = mCircuit.get(mCircuit.size() - 1).get(0).getY(),
+                yImage = (float) ( yLastQubitAdded + (qubitView.getHeight() * 1.5) );
+
+        qubitTempImageView.setX( 0 );
+        qubitTempImageView.setY( yImage );
+
+        // Set OnClickListener
+        qubitTempImageView.setOnClickListener(new MyOnClickListenerQubit());
+
+        Log.i("ImgX", qubitTempImageView.getX() + "");
+        Log.i("ImgY", qubitTempImageView.getY() + "");
+
+        // Create new circuit line
+        List<ImageView> newCircuitLine = new ArrayList<>();
+
+        // Add new qubitImageView to new circuit line
+        newCircuitLine.add(qubitTempImageView);
+
+        Log.i("Circuit size antes", mCircuit.size() + "");
+        // Add newCircuitLine to circuit
+        mCircuit.add(newCircuitLine);
+        Log.i("Circuit size depois", mCircuit.size() + "");
+
+        // Set new size to left layout according to circuit size
+        mLeftLayout.setLayoutParams(
+                new ConstraintLayout.LayoutParams(
+                        // Set same width
+                        mLeftLayout.getLayoutParams().width,
+                        // Set height
+                        (int) ( qubitView.getLayoutParams().height * 1.5 * (mCircuit.size() + 1) )
+                )
+        );
+
+        // Set new size to CircuitTimeLine layout according to circuit size
+        mViewCircuitTimeLine.setLayoutParams(
+                new FrameLayout.LayoutParams(
+                        // Set same width
+                        qubitView.getWidth() * 21,
+                        // Set height
+                        (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
+                )
+        );
+
+        Log.i("leftLayout.h", mLeftLayout.getLayoutParams().height + "");
+
+        ImageView imageViewLine = new ImageView(mContext);
+        imageViewLine.setImageResource(R.drawable.ic_line);
+        imageViewLine.setLayoutParams(
+                new ConstraintLayout.LayoutParams(
+                        21 * qubitView.getWidth(),
+                        qubitView.getHeight()
+                )
+        );
+        imageViewLine.setX(0f);
+        imageViewLine.setY(qubitTempImageView.getY());
+
+        mViewCircuitTimeLine.addView(imageViewLine);
+
+        mLinesAdded.add(imageViewLine);
+
+        // Add new qubitImageView to layout
+        mLeftLayout.addView(qubitTempImageView);
+
     }
 
     // Internal and personal class for implement TouchListener codes
@@ -475,7 +494,8 @@ public class EditorFragment extends Fragment {
     // Internal and personal class for implement DragListener codes
     class MyOnDragListener implements View.OnDragListener {
         private  int action;
-        private View viewOnDragging; //, viewfragment_circuit_editor;
+        private View viewOnDragging; // viewfragment_circuit_editor;
+        private float xStartEvent, yStartEvent;
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
@@ -489,6 +509,8 @@ public class EditorFragment extends Fragment {
 
             switch (action) {
                 case DragEvent.ACTION_DRAG_STARTED:
+                    xStartEvent = event.getX();
+                    yStartEvent = event.getY();
 
                     Log.i("STARTED", "executed");
                     break;
@@ -507,7 +529,25 @@ public class EditorFragment extends Fragment {
 
                     if ( (int) viewOnDragging.getTag(R.id.operator_location) == OPERATOR_LOCATION_CIRCUIT) {
                         mViewCircuitTimeLine.removeView(viewOnDragging);
-                        mFirstCircuitLine.remove(viewOnDragging);
+//                        mFirstCircuitLine.remove(viewOnDragging);
+
+                        for (int i = 0; i < mCircuit.size(); i++) {
+                            if (viewOnDragging.getY() == mCircuit.get(i).get(0).getY()) {
+
+//                                for (int j = 0; j < mCircuit.get(i).size(); j++) {
+//
+//                                    if (viewOnDragging.getX() == mCircuit.get(i).get(j).getY()) {
+//                                        mCircuit.get(i)
+//
+//                                    }
+//
+//                                }
+                                mCircuit.get(i).remove(viewOnDragging);
+
+                                break;
+
+                            }
+                        }
 
                     }
 
@@ -534,7 +574,8 @@ public class EditorFragment extends Fragment {
                                 )
                         );
 
-                        // Setting location attribute
+                        // ***** Setting location attribute
+                        // Setting X location
                         float
                                 // X para setar na imagem com uma borda de 5 pixels ao redor da imagem
                                 xTemp = event.getX() - ( (operatorTempImageView.getLayoutParams().width + 10) / 2 ),
@@ -547,61 +588,55 @@ public class EditorFragment extends Fragment {
 
                         operatorTempImageView.setX( xImage );
 
+                        // Setting Y location
+
+                        // Indice's nearest line where the operator was dropped
+                        int indiceNearestLine = 0;
 
                         float
-                                // X para setar na imagem com uma borda de 5 pixels ao redor da imagem
-                                yTemp = event.getY() - ( (operatorTempImageView.getLayoutParams().height + 0) / 2 ),
+                            // Smaller distance between current Y event and each circuit line
+                            smallerDistance = 1000f,
+                            currentQubitY,
+                            yImage;
 
-                                // Pixels restantes ao obter o menor múltiplo da imagem e mais próximo do valor de xTemp
-                                yOverPixels = yTemp % (operatorTempImageView.getLayoutParams().height + 0),
+                        for (int i = 0; i < mCircuit.size(); i++) {
 
-                                // X que será setado na imagem considerando a margem de 5 pixels
-                                yImage = ((int) (yTemp - yOverPixels)) + 0;
+                            currentQubitY = mCircuit.get(i).get(0).getY();
+
+                            if ( Math.abs(currentQubitY - event.getY()) < smallerDistance) {
+
+                                indiceNearestLine = i;
+                                smallerDistance = Math.abs(currentQubitY - event.getY());
+
+                            }
+
+                        }
+
+                        yImage = mCircuit.get(indiceNearestLine).get(0).getY();
 
                         operatorTempImageView.setX( xImage );
                         operatorTempImageView.setY( yImage );
 
-//                        if (mFirstCircuitLine.size() == 1) {
-//                            operatorTempImageView.setX( 6f );
-//                            operatorTempImageView.setY( 0f );
-////                            operatorTempImageView.setX( 6f );
-////                            operatorTempImageView.setY( (float) mViewTopLayout.getLayoutParams().height );
-//
-//                        } else {
-////                            operatorTempImageView.setX( mFirstCircuitLine.get(mFirstCircuitLine.size() - 1).getX() + mFirstCircuitLine.get(mFirstCircuitLine.size() - 1).getWidth() + 6f  );
-//                            operatorTempImageView.setY( 0f );
-//
-//                            float
-//                                    // X para setar na imagem com uma borda de 5 pixels ao redor da imagem
-//                                    xTemp = event.getX() - ( (operatorTempImageView.getLayoutParams().width + 10) / 2 ),
-//
-//                                    // Pixels restantes ao obter o menor múltiplo da imagem e mais próximo do valor de xTemp
-//                                    overPixels = xTemp % (operatorTempImageView.getLayoutParams().width + 10),
-//
-//                                    // X que será setado na imagem considerando a margem de 5 pixels
-//                                    xImage = ((int) (xTemp - overPixels)) + 5;
-//
-//                            operatorTempImageView.setX( xImage );
-////                            operatorTempImageView.setY( event.getY() - operatorTempImageView.getLayoutParams().height / 2 );
-//                        }
-
-                        Log.i("ImgX", operatorTempImageView.getX() + "");
-                        Log.i("ImgY", operatorTempImageView.getY() + "");
-
                         // Setting touchListener to new ImageView
                         operatorTempImageView.setOnTouchListener(new MyOnTouchListener());
 
+                        mViewCircuitTimeLine.addView(operatorTempImageView);
+
+                        // Add new operatorImageView to circuit list
+                        mCircuit.get(indiceNearestLine).add(operatorTempImageView);
+
+                        // Sort circuit line
+                        Collections.sort(mCircuit.get(indiceNearestLine), new Comparator<ImageView>() {
+                            @Override
+                            public int compare(ImageView imageView1, ImageView imageView2) {
+
+                                return (int) ( imageView1.getX() - imageView2.getX() );
+
+                            }
+                        });
+
                         // Setting new size to ViewCircuitTimeLine if it height < new imageView height
                         if (mViewCircuitTimeLine.getLayoutParams().height < operatorTempImageView.getLayoutParams().height) {
-
-//                            ImageView imageViewLine = (ImageView) mViewCircuitTimeLine.findViewById(R.id.imageViewLine);
-//
-//                            imageViewLine.setLayoutParams(
-//                                    new ConstraintLayout.LayoutParams(
-//                                            operatorTempImageView.getLayoutParams().width * 10,
-//                                            operatorTempImageView.getLayoutParams().height
-//                                    )
-//                            );
 
                             mViewCircuitTimeLine.setLayoutParams(
                                     new FrameLayout.LayoutParams(
@@ -612,41 +647,7 @@ public class EditorFragment extends Fragment {
 
                         }
 
-                        Log.i("W, H", mViewCircuitTimeLine.getLayoutParams().width + ", " + mViewCircuitTimeLine.getLayoutParams().height);
-                        mViewCircuitTimeLine.addView(operatorTempImageView);
-
-                        // Add new ImageView
-                        mFirstCircuitLine.add(operatorTempImageView);
-
-                        Collections.sort(mFirstCircuitLine, new Comparator<ImageView>() {
-                            @Override
-                            public int compare(ImageView imageView1, ImageView imageView2) {
-
-                                return (int) ( imageView1.getX() - imageView2.getX() );
-
-                            }
-                        });
-
-                        Log.i("First", mFirstQubit.getY() + "");
-
-                        for (int i = 0; i < mFirstCircuitLine.size(); i++) {
-                            if (i == 0) {
-                                Log.i("QubitValue", mFirstCircuitLine.get(i).getTag(R.id.qubit_value) + "");
-
-                            } else {
-                                Log.i("OperatorValue", mFirstCircuitLine.get(i).getTag(R.id.operator_id) + "");
-                            }
-                        }
-
                     }
-
-//                    Log.i("W H", mViewCircuitTimeLine.getLayoutParams().width + " " + mViewCircuitTimeLine.getLayoutParams().height);
-//
-//                    Log.i("viewOnDragging getY", viewOnDragging.getY() + "");
-//                    Log.i("viewOnDragging.getTag", viewOnDragging.getTag(R.id.xml_resource_id).toString());
-
-                    // Setting object view to visible again
-//                    viewOnDragging.setVisibility(View.VISIBLE);
 
                     break;
 
@@ -658,6 +659,16 @@ public class EditorFragment extends Fragment {
 
             // Default return
             return true;
+        }
+    }
+
+    public int getResourceId(String pVariableName, String pResourcename, String pPackageName)
+    {
+        try {
+            return getResources().getIdentifier(pVariableName, pResourcename, pPackageName);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 
