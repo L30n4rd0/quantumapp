@@ -2,6 +2,11 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 
 import Jama.Matrix;
 
+/**
+ * Classe que modela a representação dos qubits em spin para cima ou para baixo
+ * @author luciano
+ *
+ */
 public class Ket {
 
 	private Matrix ketZero;

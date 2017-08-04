@@ -15,39 +15,53 @@ public class Circuit {
 		/*
 		 * Classe que modela os qubits de cada linha do circuito
 		 */
-		CircuitLine circuitLine = new CircuitLine();
+		CircuitLine qubit1 = new CircuitLine();
+		CircuitLine qubit2 = new CircuitLine();
+		CircuitLine qubit3 = new CircuitLine();
+		CircuitLine qubit4 = new CircuitLine();
 
 		/*
 		 * Método que seta o ket no objeto
 		 */
-		circuitLine.setKet(1);
+		qubit1.setKet(0);
+		qubit2.setKet(0);
+		qubit3.setKet(0);
+		qubit4.setKet(0);
 
 		/*
 		 * Método para inserir ID das portas
 		 */
-		//circuitLine.setListGate(1);
-		//circuitLine.setListGate(2);
-		//circuitLine.setListGate(3);
-		//circuitLine.setListGate(4);
-		//circuitLine.setListGate(5);
-		//tListGates(6);
+		qubit1.setGate(1);
+		qubit2.setGate(1);
+		qubit3.setGate(1);
+		qubit4.setGate(1);
+		qubit4.setGate(1);
+		qubit4.setGate(1);
+		qubit4.setGate(1);
 
 		/*
 		 * Lista que recebe os qubits da tela do circuito.
 		 */
-		List<CircuitLine> listCircuitLines = new ArrayList<>();
-		listCircuitLines.add(circuitLine);
+		List<CircuitLine> listQubits = new ArrayList<>();
+		listQubits.add(qubit1);
+		listQubits.add(qubit2);
+		listQubits.add(qubit3);
+		listQubits.add(qubit4);
 		
 		/*
-		 * Os qubits são passados para máquina de estados e devolve uma matriz.
-		 * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
-		 * percorrer a lista e fazer de forma iterativa.
+		 * Aplicação dos operadores
 		 */
-		Matrix matrix = stateMachine.circuitCalculator(listCircuitLines.get(0));
+		List<Matrix> m = stateMachine.circuitCalculator(listQubits);
 		
-		circuitLine.setResult(matrix);
-
-		utils.printMatrix(circuitLine.getResult());
-
+		/*
+		 * Produto tensorial
+		 */
+		utils.printMatrix(utils.tensor(m));
+		
+		/*
+		 * Calculo das porcentagens
+		 */
+		utils.printMatrix(utils.percentCalculator(utils.tensor(m)));
+		
 	}
 }

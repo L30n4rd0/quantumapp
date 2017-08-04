@@ -175,7 +175,7 @@ public class EditorFragment extends Fragment {
          * Lista que recebe os qubits da tela do circuito.
          */
         List<Matrix> matrixResults = new ArrayList<>();
-
+        List<CircuitLine> listCircuitLine = new ArrayList<>();
         StateMachine stateMachine = StateMachine.getInstance();
 
         Utils utils = Utils.getInstance();
@@ -189,7 +189,7 @@ public class EditorFragment extends Fragment {
 
             for (int j = 0; j < circuitLineImages.size(); j++) {
                 if (j != 0) {
-                    circuitLine.addGate((Integer) circuitLineImages.get(j).getTag(R.id.operator_id));
+                    circuitLine.setKet((Integer) circuitLineImages.get(j).getTag(R.id.operator_id));
 
                 } else {
                     circuitLine.setKet((Integer) circuitLineImages.get(j).getTag(R.id.qubit_value));
@@ -197,18 +197,28 @@ public class EditorFragment extends Fragment {
                 }
             }
 
-            /*
+            listCircuitLine.add(circuitLine);
+
+        }
+
+        /*
              * Os qubits são passados para máquina de estados e devolve uma matriz.
              * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
              * percorrer a lista e fazer de forma iterativa.
              */
-            Matrix matrix = stateMachine.circuitCalculator(circuitLine);
+        List<Matrix> m = stateMachine.circuitCalculator(listCircuitLine);
 
-            matrixResults.add(matrix);
+        /*
+		 * Produto tensorial
+		 */
+        utils.printMatrix(utils.tensor(m));
 
-//            utils.printMatrix(matrix);
-
-        }
+		/*
+		 * Calculo das porcentagens
+		 */
+        utils.printMatrix(utils.percentCalculator(utils.tensor(m)));
+        
+        Matrix matrixResult = utils.tensor(m);
 
         String stringResult = "";
 
