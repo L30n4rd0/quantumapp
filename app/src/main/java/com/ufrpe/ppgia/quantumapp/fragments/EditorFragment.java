@@ -305,12 +305,17 @@ public class EditorFragment extends Fragment {
         /*
          * Lista que recebe os qubits da tela do circuito.
          */
-        List<Matrix> matrixResults = new ArrayList<>();
         List<CircuitLine> listCircuitLine = new ArrayList<>();
+
+        List<Matrix> listLinesResults;
+
+        Matrix matrixCircuitResultTensor, matrixCircuitResultPercent;
+
         StateMachine stateMachine = StateMachine.getInstance();
 
         Utils utils = Utils.getInstance();
 
+        // Add lines to listCircuitLine
         for (List<ImageView> circuitLineImages: mCircuit) {
 
             /*
@@ -320,9 +325,10 @@ public class EditorFragment extends Fragment {
 
             for (int j = 0; j < circuitLineImages.size(); j++) {
                 if (j != 0) {
-                    circuitLine.setKet((Integer) circuitLineImages.get(j).getTag(R.id.operator_id));
+                    circuitLine.setGate((Integer) circuitLineImages.get(j).getTag(R.id.operator_id));
 
                 } else {
+                    // The position 0 of each circuit line is the qubit value
                     circuitLine.setKet((Integer) circuitLineImages.get(j).getTag(R.id.qubit_value));
 
                 }
@@ -333,39 +339,28 @@ public class EditorFragment extends Fragment {
         }
 
         /*
-             * Os qubits são passados para máquina de estados e devolve uma matriz.
-             * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
-             * percorrer a lista e fazer de forma iterativa.
-             */
-        List<Matrix> m = stateMachine.circuitCalculator(listCircuitLine);
+         * Os qubits são passados para máquina de estados e devolve uma matriz.
+         * Caso seja melhor o objeto CircuitLine pode ser passado diretamente ou criado um laço para
+         * percorrer a lista e fazer de forma iterativa.
+         */
+        listLinesResults = stateMachine.circuitCalculator(listCircuitLine);
 
         /*
 		 * Produto tensorial
 		 */
-        utils.printMatrix(utils.tensor(m));
+        matrixCircuitResultTensor = utils.tensor(listLinesResults);
+        Log.i("Result", "Tensorial");
+        utils.printMatrix(matrixCircuitResultTensor);
 
 		/*
 		 * Calculo das porcentagens
 		 */
-        utils.printMatrix(utils.percentCalculator(utils.tensor(m)));
-        
-        Matrix matrixResult = utils.tensor(m);
+        matrixCircuitResultPercent = utils.percentCalculator(matrixCircuitResultTensor);
+        Log.i("Result", "Percent");
+        utils.printMatrix(matrixCircuitResultPercent);
 
-        String stringResult = "";
+        String stringCircuitStatus = "Circuito debugging\n";
 
-        for (Matrix matrix : matrixResults) {
-
-            for (int i = 0; i < matrix.getRowDimension(); i++) {
-
-                for (int j = 0; j < matrix.getColumnDimension(); j++) {
-
-                    stringResult += matrix.get(i, j) + "\n";
-
-                }
-            }
-        }
-
-        String stringCircuitStatus = "";
         for (int i = 0; i < mCircuit.size(); i++) {
             for (int j = 0; j < mCircuit.get(i).size(); j++) {
                 if (j != 0) {
@@ -380,11 +375,24 @@ public class EditorFragment extends Fragment {
 
         }
 
+        String stringResult = "Matriz\tPercent\n";
+
+        for (int i = 0; i < matrixCircuitResultTensor.getRowDimension(); i++) {
+
+            for (int j = 0; j < matrixCircuitResultTensor.getColumnDimension(); j++) {
+
+                stringResult += matrixCircuitResultTensor.get(i, j) + "\t\t\t" + matrixCircuitResultPercent.get(i, j) + "\n";
+
+            }
+        }
+
+        stringResult += "\n";
+
 //        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
         alertDialogBuilder.setTitle("Circuito Resultado");
-        alertDialogBuilder.setMessage(stringCircuitStatus + "\n .............................\n" + stringResult);
+        alertDialogBuilder.setMessage(stringResult + "...................................\n" + stringCircuitStatus);
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

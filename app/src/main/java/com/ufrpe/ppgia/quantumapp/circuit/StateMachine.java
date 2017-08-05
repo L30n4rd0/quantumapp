@@ -13,12 +13,12 @@ import Jama.Matrix;
  */
 public class StateMachine {
 
-	private static StateMachine instance;
+	private static StateMachine instance = null;
 
 	Gates gates = null;
 	Ket ket = null;
 
-	public StateMachine() {
+	private StateMachine() {
 
 		gates = Gates.getInstance();
 		ket = new Ket();
@@ -27,7 +27,9 @@ public class StateMachine {
 
 	public static StateMachine getInstance() {
 
-		instance = new StateMachine();
+		if (instance == null) {
+            instance = new StateMachine();
+        }
 
 		return instance;
 
