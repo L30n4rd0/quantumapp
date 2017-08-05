@@ -9,7 +9,7 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 public class Complex {
 
 	private double x;
-	private double y = 0.5;
+	private double y = 1.0;
 	private double imaginary;
 
 	public Complex() {
