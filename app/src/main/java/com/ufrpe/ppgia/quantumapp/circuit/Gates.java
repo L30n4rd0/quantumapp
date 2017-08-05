@@ -2,6 +2,12 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 
 import Jama.Matrix;
 
+/**
+ * Classe que contêm as implementações dos métodos
+ * que representam os operadores
+ * @author luciano
+ *
+ */
 public class Gates {
 
 	private static Gates instance;
@@ -19,8 +25,6 @@ public class Gates {
 	}
 
 	public Matrix hadamard(Matrix matrix) {
-
-		Matrix C = null;
 		
 		double factor = 1 / Math.sqrt(2);
 
@@ -28,7 +32,7 @@ public class Gates {
 
 		Matrix A = new Matrix(m);
 
-		C = A.times(matrix);
+		Matrix C = A.times(matrix);
 
 		C = C.times(factor);
 

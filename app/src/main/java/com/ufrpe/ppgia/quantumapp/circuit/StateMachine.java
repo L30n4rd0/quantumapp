@@ -1,7 +1,16 @@
 package com.ufrpe.ppgia.quantumapp.circuit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Jama.Matrix;
 
+/**
+ * Classe que contêm o método que executa
+ * os operadores no circuito
+ * @author luciano
+ *
+ */
 public class StateMachine {
 
 	private static StateMachine instance;
@@ -24,91 +33,83 @@ public class StateMachine {
 
 	}
 
-	public Matrix circuitCalculator(CircuitLine qubits) {
+	public List<Matrix> circuitCalculator(List<CircuitLine> circuitLines) {
+		
+		List<Matrix> listMatrix = new ArrayList<Matrix>();
 
-		Matrix matrix = null;
+		for (int i = 0; i < circuitLines.size(); i++) {
 
-		if (qubits.getKet() == 0) {
+			Matrix matrix = null;
 
-			matrix = ket.getKetZero();
+			if (circuitLines.get(i).getKet() == 0) {
 
-		} else {
+				matrix = ket.getKetZero();
 
-			matrix = ket.getKetOne();
+			} else {
 
-		}
-
-		int count = 0;
-
-		while (count < qubits.getListGates().size()) {
-
-			switch (qubits.getListGates().get(count)) {
-
-			// Porta de Hadamard
-			case 1:
-
-				matrix = gates.hadamard(matrix);
-
-				System.out.println("Hadamard");
-
-				break;
-
-			// Porta Pauli-X
-			case 2:
-
-				matrix = gates.pauliX(matrix);
-
-				System.out.println("PauliX");
-
-				break;
-
-			// Porta Pauli-Y
-			case 3:
-
-				matrix = gates.pauliY(matrix);
-
-				System.out.println("PauliY");
-
-				break;
-
-			// Porta Pauli-Z
-			case 4:
-
-				matrix = gates.pauliZ(matrix);
-
-				System.out.println("PauliZ");
-
-				break;
-
-			// Porta Phase
-			case 5:
-
-				matrix = gates.phase(matrix);
-
-				System.out.println("Phase");
-
-				break;
-
-			// Porta piEight
-			case 6:
-
-				matrix = gates.piEight(matrix);
-
-				System.out.println("piEight");
-
-				break;
-
-			default:
-
-				break;
+				matrix = ket.getKetOne();
 
 			}
 
-			count += 1;
+			for (int j = 0; j < circuitLines.get(i).getListGates().size(); j++) {
+
+				switch (circuitLines.get(i).getListGates().get(j)) {
+
+				// Porta de Hadamard
+				case 1:
+
+					matrix = gates.hadamard(matrix);
+
+					break;
+
+				// Porta Pauli-X
+				case 2:
+
+					matrix = gates.pauliX(matrix);
+
+					break;
+
+				// Porta Pauli-Y
+				case 3:
+
+					matrix = gates.pauliY(matrix);
+
+					break;
+
+				// Porta Pauli-Z
+				case 4:
+
+					matrix = gates.pauliZ(matrix);
+
+					break;
+
+				// Porta Phase
+				case 5:
+
+					matrix = gates.phase(matrix);
+
+					break;
+
+				// Porta piEight
+				case 6:
+
+					matrix = gates.piEight(matrix);
+
+					break;
+
+				default:
+
+					break;
+
+				}
+
+			}
+			
+			listMatrix.add(matrix);
 
 		}
-
-		return matrix;
+		
+		return listMatrix;
 
 	}
 

@@ -1,5 +1,11 @@
 package com.ufrpe.ppgia.quantumapp.circuit;
 
+/**
+ * Classe que modela o número complexo.
+ * É composto por uma parte real x e uma imaginária iy
+ * @author luciano
+ *
+ */
 public class Complex {
 
 	private double x;

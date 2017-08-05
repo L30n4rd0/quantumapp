@@ -3,12 +3,16 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 import java.util.ArrayList;
 import java.util.List;
 
-import Jama.Matrix;
-
+/**
+ * Classe que modela cada linha do circuito
+ * quântico. Guarda o seu ket e uma lista de portas
+ * que são aplicadas
+ * @author luciano
+ *
+ */
 public class CircuitLine {
 
 	int ket;
-	Matrix result;
 	List<Integer> listGates;
 
 	public CircuitLine() {
@@ -25,19 +29,11 @@ public class CircuitLine {
 		this.ket = ket;
 	}
 
-	public Matrix getResult() {
-		return result;
-	}
-
-	public void setResult(Matrix result) {
-		this.result = result;
-	}
-
 	public List<Integer> getListGates() {
 		return listGates;
 	}
 
-	public void addGate(Integer gate) {
+	public void setGate(Integer gate) {
 		this.listGates.add(gate);
 	}
 
