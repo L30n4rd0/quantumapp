@@ -88,6 +88,8 @@ public class EditorFragment extends Fragment {
         mFirstQubit.setOnClickListener(new MyOnClickListenerQubit());
 
         this.mLinesAdded = new ArrayList<>();
+        this.mLinesAdded.add((ImageView) this.mViewCircuitTimeLine.findViewById(R.id.imageViewLine));
+
 
         List<ImageView> mFirstCircuitLine = new ArrayList<>();
         mFirstCircuitLine.add(mFirstQubit);
@@ -123,7 +125,7 @@ public class EditorFragment extends Fragment {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setTitle("Opções");
-            builder.setItems(new CharSequence[] {"ALTERAR VALOR", "APAGAR QUBIT", "ADICIONAR QUBIT"},
+            builder.setItems(new CharSequence[] {"ALTERAR VALOR", "APAGAR QUBIT (-)", "ADICIONAR QUBIT (+)"},
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // The 'which' argument contains the index position
@@ -215,14 +217,14 @@ public class EditorFragment extends Fragment {
                     break;
 
                 case DragEvent.ACTION_DROP:
-                    Log.i("DROP", "executed");
 
                     // Getting clipData value to be used in anything ....
-                    String clipData = event.getClipDescription().getLabel().toString();
-                    Log.i("Clip", clipData);
+//                    String clipData = event.getClipDescription().getLabel().toString();
+//                    Log.i("Clip", clipData);
 
                     addOperatorToCircuit(event);
 
+                    Log.i("DROP", "executed");
                     break;
 
                 case DragEvent.ACTION_DRAG_ENDED:
@@ -349,14 +351,12 @@ public class EditorFragment extends Fragment {
 		 * Produto tensorial
 		 */
         matrixCircuitResultTensor = utils.tensor(listLinesResults);
-        Log.i("Result", "Tensorial");
         utils.printMatrix(matrixCircuitResultTensor);
 
 		/*
 		 * Calculo das porcentagens
 		 */
         matrixCircuitResultPercent = utils.percentCalculator(matrixCircuitResultTensor);
-        Log.i("Result", "Percent");
         utils.printMatrix(matrixCircuitResultPercent);
 
         String stringCircuitStatus = "Circuito debugging\n";
@@ -381,7 +381,7 @@ public class EditorFragment extends Fragment {
 
             for (int j = 0; j < matrixCircuitResultTensor.getColumnDimension(); j++) {
 
-                stringResult += matrixCircuitResultTensor.get(i, j) + "\t\t\t" + matrixCircuitResultPercent.get(i, j) + "\n";
+                stringResult += matrixCircuitResultTensor.get(i, j) + "\t\t\t" + matrixCircuitResultPercent.get(i, j) + "%\n";
 
             }
         }
@@ -446,19 +446,14 @@ public class EditorFragment extends Fragment {
         // Set OnClickListener
         qubitTempImageView.setOnClickListener(new MyOnClickListenerQubit());
 
-        Log.i("ImgX", qubitTempImageView.getX() + "");
-        Log.i("ImgY", qubitTempImageView.getY() + "");
-
         // Create new circuit line
         List<ImageView> newCircuitLine = new ArrayList<>();
 
         // Add new qubitImageView to new circuit line
         newCircuitLine.add(qubitTempImageView);
 
-        Log.i("Circuit size antes", mCircuit.size() + "");
         // Add newCircuitLine to circuit
         mCircuit.add(newCircuitLine);
-        Log.i("Circuit size depois", mCircuit.size() + "");
 
         // Set new size to left layout according to circuit size
         mLeftLayout.setLayoutParams(
@@ -479,8 +474,6 @@ public class EditorFragment extends Fragment {
                         (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
                 )
         );
-
-        Log.i("leftLayout.h", mLeftLayout.getLayoutParams().height + "");
 
         ImageView imageViewLine = new ImageView(mContext);
         imageViewLine.setImageResource(R.drawable.ic_line);
@@ -509,37 +502,57 @@ public class EditorFragment extends Fragment {
 
         } else {
 
-            float yOld = -1f, yCurrent = -1f;
+            float oldY = -1f, currentY;
 
+            // Verify line that will deleted
             for (int i = 1; i < mCircuit.size(); i++) {
+
+                // Used view in the condition for not conflict with organizing circuit loop
                 if ( qubitView.equals(mCircuit.get(i).get(0)) ) {
 
-                    yOld = mCircuit.get(i).get(0).getY();
+                    // 'y' position of line that will be removed
+                    oldY = mCircuit.get(i).get(0).getY();
 
                     for (int j = 0; j < mCircuit.get(i).size(); j++) {
                         if (j != 0) {
+                            // Removing operators views
                             mViewCircuitTimeLine.removeView(mCircuit.get(i).get(j));
 
                         } else {
-                            mLeftLayout.removeView(mCircuit.get(i).get(j));
+                            // Removing qubit view
+                            mLeftLayout.removeView(mCircuit.get(i).get(0));
 
                         }
                     }
 
-                    mViewCircuitTimeLine.removeView(mLinesAdded.get(mLinesAdded.size() - 1));
-                    mCircuit.remove(mCircuit.get(i));
+                    Log.i("mLines antes", mLinesAdded.size() + "");
+                    Log.i("mCircuit antes", mCircuit.size() + "");
+
+                    int indiceLastLineAdded = mLinesAdded.size() - 1;
+                    mViewCircuitTimeLine.removeView(mLinesAdded.get(indiceLastLineAdded));
+                    mLinesAdded.remove(indiceLastLineAdded);
+                    mCircuit.remove(i);
+
+                    Log.i("mLines antes", mLinesAdded.size() + "");
+                    Log.i("mCircuit antes", mCircuit.size() + "");
 
                 }
 
                 // Organizing circuit positions
-                if (yOld > 0 && i < mCircuit.size()) {
+                // 'i' is now the next line in the array
+                if (oldY > 0 && i < mCircuit.size()) {
+
+                    // 'y' of qubit in the next line
+                    currentY = mCircuit.get(i).get(0).getY();
+
                     for (int j = 0; j < mCircuit.get(i).size(); j++) {
 
-                        yCurrent = mCircuit.get(i).get(j).getY();
-                        mCircuit.get(i).get(j).setY(yOld);
-                        yOld = yCurrent;
+                        // Setting position of qubit and operators images views to oldY
+                        mCircuit.get(i).get(j).setY(oldY);
 
                     }
+
+                    oldY = currentY;
                 }
             }
 
@@ -554,14 +567,14 @@ public class EditorFragment extends Fragment {
             );
 
             // Set new size to CircuitTimeLine layout according to circuit size
-            mViewCircuitTimeLine.setLayoutParams(
-                    new FrameLayout.LayoutParams(
-                            // Set same width
-                            qubitView.getWidth() * 21,
-                            // Set height
-                            (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
-                    )
-            );
+//            mViewCircuitTimeLine.setLayoutParams(
+//                    new FrameLayout.LayoutParams(
+//                            // Set same width
+//                            qubitView.getWidth() * 21,
+//                            // Set height
+//                            (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
+//                    )
+//            );
 
         }
 
@@ -612,6 +625,7 @@ public class EditorFragment extends Fragment {
                             viewOnDragging.getHeight()
                     )
             );
+            operatorTempImageView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
             // ***** Setting location attribute
             // Setting X location
