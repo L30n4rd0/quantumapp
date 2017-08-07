@@ -7,17 +7,15 @@ import Jama.Matrix;
 
 public class Utils {
 
-	private static Utils instance = null;
+	private static Utils instance;
 
-	private Utils() {
+	public Utils() {
 
 	}
 
 	public static Utils getInstance() {
 
-        if (instance == null) {
-            instance = new Utils();
-        }
+		instance = new Utils();
 
 		return instance;
 
@@ -30,19 +28,15 @@ public class Utils {
 	 */
 	public Matrix tensor(List<Matrix> listMatrix) {
 
-        Matrix matrixCircuitResult = listMatrix.get(0);
+		Matrix register = tensorProduct(listMatrix.get(0), listMatrix.get(1));
 
-        if (listMatrix.size() > 1) {
-            matrixCircuitResult = tensorProduct(listMatrix.get(0), listMatrix.get(1));
+		for (int i = 2; i < listMatrix.size(); i++) {
 
-            for (int i = 2; i < listMatrix.size(); i++) {
+			register = tensorProduct(register, listMatrix.get(i));
 
-                matrixCircuitResult = tensorProduct(matrixCircuitResult, listMatrix.get(i));
-
-            }
-        }
-
-		return matrixCircuitResult;
+		}
+		
+		return register;
 
 	}
 

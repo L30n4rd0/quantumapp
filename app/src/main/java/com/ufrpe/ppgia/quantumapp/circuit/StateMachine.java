@@ -6,19 +6,19 @@ import java.util.List;
 import Jama.Matrix;
 
 /**
- * Classe que contêm o método que executa
- * os operadores no circuito
+ * Classe que contêm o método que executa os operadores no circuito
+ * 
  * @author luciano
  *
  */
 public class StateMachine {
 
-	private static StateMachine instance = null;
+	private static StateMachine instance;
 
 	Gates gates = null;
 	Ket ket = null;
 
-	private StateMachine() {
+	public StateMachine() {
 
 		gates = Gates.getInstance();
 		ket = new Ket();
@@ -27,31 +27,29 @@ public class StateMachine {
 
 	public static StateMachine getInstance() {
 
-		if (instance == null) {
-            instance = new StateMachine();
-        }
+		instance = new StateMachine();
 
 		return instance;
 
 	}
 
 	public List<Matrix> circuitCalculator(List<CircuitLine> circuitLines) {
-		
+
 		List<Matrix> listMatrix = new ArrayList<Matrix>();
 
 		for (int i = 0; i < circuitLines.size(); i++) {
 
 			Matrix matrix = null;
 
-			if (circuitLines.get(i).getKet() == 0) {
+				if (circuitLines.get(i).getKet() == 0) {
 
-				matrix = ket.getKetZero();
+					matrix = ket.getKetZero();
 
-			} else {
+				} else {
 
-				matrix = ket.getKetOne();
+					matrix = ket.getKetOne();
 
-			}
+				}
 
 			for (int j = 0; j < circuitLines.get(i).getListGates().size(); j++) {
 
@@ -99,6 +97,13 @@ public class StateMachine {
 
 					break;
 
+				// Porta Controlled-NOT
+				case 7:
+
+					gates.controlledNot(circuitLines, i, j);
+
+					break;
+
 				default:
 
 					break;
@@ -106,11 +111,11 @@ public class StateMachine {
 				}
 
 			}
-			
+
 			listMatrix.add(matrix);
 
 		}
-		
+
 		return listMatrix;
 
 	}

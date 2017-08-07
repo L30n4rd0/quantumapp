@@ -3,10 +3,12 @@ package com.ufrpe.ppgia.quantumapp.circuit;
 import java.util.ArrayList;
 import java.util.List;
 
+import Jama.Matrix;
+
 /**
- * Classe que modela cada linha do circuito
- * quântico. Guarda o seu ket e uma lista de portas
- * que são aplicadas
+ * Classe que modela cada linha do circuito quântico. Guarda o seu ket e uma
+ * lista de portas que são aplicadas
+ * 
  * @author luciano
  *
  */

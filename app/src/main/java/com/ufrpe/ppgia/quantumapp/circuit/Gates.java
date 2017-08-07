@@ -1,10 +1,13 @@
 package com.ufrpe.ppgia.quantumapp.circuit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Jama.Matrix;
 
 /**
- * Classe que contêm as implementações dos métodos
- * que representam os operadores
+ * Classe que contêm as implementações dos métodos que representam os operadores
+ * 
  * @author luciano
  *
  */
@@ -25,7 +28,7 @@ public class Gates {
 	}
 
 	public Matrix hadamard(Matrix matrix) {
-		
+
 		double factor = 1 / Math.sqrt(2);
 
 		double[][] m = { { 1, 1 }, { 1, -1 } };
@@ -98,13 +101,52 @@ public class Gates {
 		Complex complex = new Complex(1, 1, 1);
 
 		double[][] matrix = { { 1, 0 },
-				{ 0, Math.exp((complex.getImaginary() * Math.PI) / 4 ) } };
+				{ 0, Math.exp((complex.getImaginary() * Math.PI) / 4) } };
 
 		Matrix A = new Matrix(matrix);
 
 		Matrix C = A.times(ket);
 
 		return C;
+
+	}
+
+	public void controlledNot(List<CircuitLine> circuitLines, int line,
+			int indexGate) {
+
+		int ket = circuitLines.get(line).getKet();
+
+		int gate = circuitLines.get(line).getListGates().get(indexGate);
+
+		for (int i = line + 1; i < circuitLines.size(); i++) {
+
+			if (ket == 1) {
+
+				if (!circuitLines.get(i).getListGates().isEmpty()) {
+
+					if (circuitLines.get(i).getListGates().get(indexGate) == gate) {
+
+						if (circuitLines.get(i).getKet() == 0) {
+
+							circuitLines.get(i).setKet(1);
+
+						} else {
+
+							circuitLines.get(i).setKet(0);
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	public void swap(List<CircuitLine> circuitLines, int line, int indexGate) {
 
 	}
 

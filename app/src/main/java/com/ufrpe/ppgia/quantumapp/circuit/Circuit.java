@@ -23,21 +23,21 @@ public class Circuit {
 		/*
 		 * Método que seta o ket no objeto
 		 */
-		qubit1.setKet(0);
+		qubit1.setKet(1);
 		qubit2.setKet(0);
-		qubit3.setKet(0);
-		qubit4.setKet(0);
+		qubit3.setKet(1);
+		qubit4.setKet(1);
 
 		/*
 		 * Método para inserir ID das portas
 		 */
 		qubit1.setGate(1);
 		qubit2.setGate(1);
-		qubit3.setGate(1);
-		qubit4.setGate(1);
-		qubit4.setGate(1);
-		qubit4.setGate(1);
-		qubit4.setGate(1);
+		//qubit3.setGate(8);
+		//qubit4.setGate(8);
+		//qubit4.setGate(1);
+		//qubit4.setGate(1);
+		//qubit4.setGate(4);
 
 		/*
 		 * Lista que recebe os qubits da tela do circuito.
@@ -56,7 +56,7 @@ public class Circuit {
 		/*
 		 * Produto tensorial
 		 */
-		utils.printMatrix(utils.tensor(m));
+		//utils.printMatrix(utils.tensor(m));
 		
 		/*
 		 * Calculo das porcentagens
