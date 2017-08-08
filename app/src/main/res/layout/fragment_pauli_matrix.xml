@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/textViewPauliParagrafoUm"
                 style="@style/textViewContentStyle"
-                android:text="@string/pauli_paragrafo_um" />
+                android:text="@string/pauli_text_paragraph_1" />
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
@@ -32,63 +32,132 @@
                 <ImageView
                     android:id="@+id/imgViewPauliX"
                     app:srcCompat="@drawable/ic_operator_pauli_x"
+                    style="@style/imageViewDefaultStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    style="@style/imageViewDefaultStyle"/>
+                    />
 
                 <ImageView
                     android:id="@+id/imgViewPauliY"
                     app:srcCompat="@drawable/ic_operator_pauli_y"
+                    style="@style/imageViewDefaultStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    style="@style/imageViewDefaultStyle" />
+                    />
 
                 <ImageView
                     android:id="@+id/imgViewPauliZ"
                     app:srcCompat="@drawable/ic_operator_pauli_z"
+                    style="@style/imageViewDefaultStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    style="@style/imageViewDefaultStyle" />
+                    />
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textViewPauliParagrafoDois"
                 style="@style/textViewContentStyle"
-                android:text="@string/pauli_paragrafo_dois" />
+                android:text="@string/pauli_text_paragraph_2" />
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
-            <ImageView
-                android:id="@+id/imgViewMatrizPauliX"
-                app:srcCompat="@drawable/ic_matriz_pauli_x"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                style="@style/imageViewDefaultStyle" />
+                <ImageView
+                    android:id="@+id/imgViewMatrizPauliX"
+                    app:srcCompat="@drawable/ic_matriz_pauli_x"
+                    style="@style/imageViewDefaultStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    />
 
-            <ImageView
-                android:id="@+id/imgViewMatrizPauliY"
-                app:srcCompat="@drawable/ic_matriz_pauli_y"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                style="@style/imageViewDefaultStyle" />
+                <ImageView
+                    android:id="@+id/imgViewMatrizPauliY"
+                    app:srcCompat="@drawable/ic_matriz_pauli_y"
+                    style="@style/imageViewDefaultStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    />
 
-            <ImageView
-                android:id="@+id/imgViewMatrizPauliZ"
-                app:srcCompat="@drawable/ic_matriz_pauli_z"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                style="@style/imageViewDefaultStyle" />
+                <ImageView
+                    android:id="@+id/imgViewMatrizPauliZ"
+                    app:srcCompat="@drawable/ic_matriz_pauli_z"
+                    style="@style/imageViewDefaultStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    />
 
         </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewPauliParagrafoTres"
+                style="@style/textViewContentStyle"
+                android:text="@string/pauli_text_paragraph_3" />
+
+            <ImageView
+                app:srcCompat="@drawable/ic_example_pauli_x"
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="20dp" />
+
+            <ImageView
+                app:srcCompat="@drawable/ic_example_pauli_x_matrix"
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="100dp"/>
+
+            <TextView
+                style="@style/textViewContentStyle"
+                android:text="@string/pauli_text_paragraph_4" />
+
+            <ImageView
+                app:srcCompat="@drawable/ic_generic_qubit"
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="20dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="500dp"
+                        app:srcCompat="@drawable/ic_example_pauli_y_matrix" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                style="@style/textViewContentStyle"
+                android:text="@string/pauli_text_paragraph_5" />
+
+            <ImageView
+                app:srcCompat="@drawable/ic_generic_qubit"
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="20dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="500dp"
+                        app:srcCompat="@drawable/ic_example_pauli_z_matrix" />
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
     </ScrollView>

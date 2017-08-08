@@ -23,7 +23,7 @@ public class ControledZFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_controled_z, container, false);
+        View v = inflater.inflate(R.layout.fragment_controlled_z, container, false);
 
         return v;
     }

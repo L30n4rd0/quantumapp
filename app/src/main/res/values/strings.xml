@@ -21,11 +21,11 @@
     <string name="sub_menu_pauli_matrix">Pauli Matrix</string>
     <string name="sub_menu_pauli_y">Pauli-Y</string>
     <string name="sub_menu_pauli_z">Pauli-Z</string>
-    <string name="sub_menu_fase">Phase</string>
+    <string name="sub_menu_phase">Phase</string>
     <string name="sub_menu_pi_8">π/8</string>
-    <string name="sub_menu_controled_not">Controled-NOT</string>
-    <string name="sub_menu_controled_z">Controled-Z</string>
-    <string name="sub_menu_controled_phase">Controled-Phase</string>
+    <string name="sub_menu_controlled_not">Controlled-NOT</string>
+    <string name="sub_menu_controlled_z">Controlled-Z</string>
+    <string name="sub_menu_controlled_phase">Controlled-Phase</string>
     <string name="sub_menu_swap">Swap</string>
 
     <string name="menu_about">About</string>
@@ -35,12 +35,16 @@
     <string name="temp_string">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
 
     <string name="quantum_computating_history_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
-        <p>
-            \n2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+        1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
     </string>
 
     <string name="quantum_computating_fundamentals_text">
@@ -57,74 +61,126 @@
         "seams, divides space, and indicates moving parts.\n\n"
     </string>
 
-    <string name="hadamard_text_paragrafo_um">
+    <string name="hadamard_text_paragraph_1">
         "Um operador importante para o conceito da superposição é o operador de hadamard. A sua aplicação"
         "consegue-se a superposição de todos os possíveis valores armazenados em um registrador."
         "Segue, abaixo a sua representação gráfica."
     </string>
-    <string name="hadamard_text_paragrafo_dois">
+    <string name="hadamard_text_paragraph_2">
         "A matriz que define este operador é mostrada a seguir."
     </string>
-    <string name="hadamard_text_paragrafo_tres">
+    <string name="hadamard_text_paragraph_3">
         " Temos também sua representação na notação de Dirac."
     </string>
-    <string name="hadamard_text_paragrafo_quatro">
+    <string name="hadamard_text_paragraph_4">
         "Sua aplicação nos vetores da base computacional cria um estado em superposição"
         "com leitura dos observáveis igualmente provável."
     </string>
 
-    <string name="pauli_paragrafo_um">
+    <!-- **** Text of ports Pauli **** -->
+    <string name="pauli_text_paragraph_1">
         "As matrizes de Pauli são úteis no estudo da computação e informação quântica."
-        "São matrizes complexas 2 x 2 hermitianas e unitárias, assim são definidas as matrizes de Pauli"
-        "Descrevem o spin de uma particula em um campo eletromagnético. Abaixo segue a representação gráfica das portasde Pauli-X, Pauli-Y e Pauli-Z."
+        "São matrizes complexas 2 x 2, hermitianas e unitárias, assim são definidas as matrizes de Pauli."
+        "Descrevem o spin de uma partícula em um campo eletromagnético. Abaixo segue a representação gráfica das portas de Pauli-X, Pauli-Y e Pauli-Z."
+
     </string>
 
-    <string name="pauli_paragrafo_dois">
+    <string name="pauli_text_paragraph_2">
         "Vejamos agora, as suas matrizes."
     </string>
 
-    <string name="fase_paragrafo_um">
-        "..."
+    <string name="pauli_text_paragraph_3">
+       "A porta de Pauli X corresponde a porta clássica NOT, como pode ser visualizado abaxo."
+    </string>
+
+    <string name="pauli_text_paragraph_4">
+        Ao ser aplicada a porta Pauli Y em um q-bit genérico obtém-se o resultado abaixo.
+    </string>
+
+    <string name="pauli_text_paragraph_5">
+        Ao ser aplicada a porta Pauli Z em um q-bit genérico obtém-se o resultado abaixo.
+    </string>
+
+    <!-- **** Text of port Phase **** -->
+    <string name="phase_text_paragraph_1">
+       A porta Phase é representada no circuito pela letra S.
+        Seu símbolo no circuito e a sua matriz pode ser vista abaixo.
+    </string>
+
+    <string name="phase_text_paragraph_2">
+       Ao ser aplicada a porta Phase em um q-bit genérico obtém-se o resultado abaixo.
     </string>
 
     <string name="pi_8_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+        1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
+    </string>
+
+    <string name="controlled_not_text">
+       1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
 
     </string>
 
-    <string name="controled_not_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+    <string name="controlled_z_text">
+       1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
 
     </string>
 
-    <string name="controled_z_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
-
-    </string>
-
-    <string name="controled_phase_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+    <string name="controlled_phase_text">
+        1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
 
     </string>
 
     <string name="swap_text">
-        <p>
-            1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis, sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut. Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi, eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus. Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros. Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum. Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+       1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
+        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
+        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
+        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
+        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
+        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
+        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
+        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
+        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
 
     </string>
 
     <string name="title_activity_settings">Settings</string>
-
-    <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>

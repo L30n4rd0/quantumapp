@@ -4,14 +4,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewTitleFase"
+        android:id="@+id/textViewControledNotTitle"
         android:layout_alignParentTop="true"
-        android:text="@string/sub_menu_fase"
+        android:text="@string/sub_menu_controlled_not"
         style="@style/textViewHeaderStyle" />
 
     <ScrollView
-        android:layout_below="@+id/textViewTitleFase"
-        style="@style/scrollViewDefaultStyle" >
+        android:layout_below="@+id/textViewControledNotTitle"
+        style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/textViewFaseText"
-                android:text="@string/fase_paragrafo_um"
+                android:text="@string/controlled_not_text"
                 style="@style/textViewContentStyle" />
 
         </LinearLayout>

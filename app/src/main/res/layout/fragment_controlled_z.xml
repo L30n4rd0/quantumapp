@@ -4,13 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewControledNotTitle"
+        android:id="@+id/textViewControledZTitle"
         android:layout_alignParentTop="true"
-        android:text="@string/sub_menu_controled_not"
+        android:text="@string/sub_menu_controlled_z"
         style="@style/textViewHeaderStyle" />
 
     <ScrollView
-        android:layout_below="@+id/textViewControledNotTitle"
+        android:layout_below="@+id/textViewControledZTitle"
         style="@style/scrollViewDefaultStyle">
 
         <LinearLayout
@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/textViewFaseText"
-                android:text="@string/controled_not_text"
+                android:text="@string/controlled_z_text"
                 style="@style/textViewContentStyle" />
 
         </LinearLayout>

@@ -38,7 +38,7 @@
             <item
                 android:id="@+id/sub_menu_fase"
                 android:icon="@drawable/ic_operator_phase"
-                android:title="@string/sub_menu_fase" />
+                android:title="@string/sub_menu_phase" />
             <item
                 android:id="@+id/sub_menu_pi_8"
                 android:icon="@drawable/ic_operator_pi_8"

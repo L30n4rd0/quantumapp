@@ -23,7 +23,7 @@ public class FaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_fase, container, false);
+        View v = inflater.inflate(R.layout.fragment_phase, container, false);
 
         return v;
     }
