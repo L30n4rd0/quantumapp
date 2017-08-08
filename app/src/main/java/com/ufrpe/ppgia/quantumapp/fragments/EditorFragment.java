@@ -107,7 +107,7 @@ public class EditorFragment extends Fragment {
         buttonSimulate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCircuitInDialog();
+                showResultsInDialog();
             }
         });
 
@@ -247,10 +247,10 @@ public class EditorFragment extends Fragment {
         ImageView mImageViewPauliZ = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorPauliZ);
         ImageView mImageViewPhase = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorPhase);
         ImageView mImageViewPI8 = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorPI8);
-        ImageView mImageViewControledNot = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControledNot);
-        ImageView mImageViewControledPhase = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControledPhase);
-        ImageView mImageViewControledZ = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControledZ);
-        ImageView mImageViewSwap = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorSwap);
+//        ImageView mImageViewControlledNot = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControlledNot);
+//        ImageView mImageViewControlledPhase = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControlledPhase);
+//        ImageView mImageViewControlledZ = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorControlledZ);
+//        ImageView mImageViewSwap = (ImageView) mViewTopLayout.findViewById(R.id.imageViewOperatorSwap);
 
         // Setting tag xml_resource_id
         mImageViewHadamard.setTag(R.id.xml_resource_id, R.drawable.ic_operator_hadamard);
@@ -259,10 +259,10 @@ public class EditorFragment extends Fragment {
         mImageViewPauliZ.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pauli_z);
         mImageViewPhase.setTag(R.id.xml_resource_id, R.drawable.ic_operator_phase);
         mImageViewPI8.setTag(R.id.xml_resource_id, R.drawable.ic_operator_pi_8);
-        mImageViewControledNot.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_not);
-        mImageViewControledPhase.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_phase);
-        mImageViewControledZ.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controled_z);
-        mImageViewSwap.setTag(R.id.xml_resource_id, R.drawable.ic_operator_swap);
+//        mImageViewControlledNot.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controlled_not);
+//        mImageViewControlledPhase.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controlled_phase);
+//        mImageViewControlledZ.setTag(R.id.xml_resource_id, R.drawable.ic_operator_controlled_z);
+//        mImageViewSwap.setTag(R.id.xml_resource_id, R.drawable.ic_operator_swap);
 
         // Setting tag qubit_location
         mImageViewHadamard.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
@@ -271,10 +271,10 @@ public class EditorFragment extends Fragment {
         mImageViewPauliZ.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
         mImageViewPhase.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
         mImageViewPI8.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
-        mImageViewControledNot.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
-        mImageViewControledPhase.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
-        mImageViewControledZ.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
-        mImageViewSwap.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
+//        mImageViewControlledNot.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
+//        mImageViewControlledPhase.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
+//        mImageViewControlledZ.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
+//        mImageViewSwap.setTag(R.id.operator_location, OPERATOR_LOCATION_TOP);
 
         // Setting tag operator_id
         mImageViewHadamard.setTag(R.id.operator_id, 1);
@@ -283,10 +283,10 @@ public class EditorFragment extends Fragment {
         mImageViewPauliZ.setTag(R.id.operator_id, 4);
         mImageViewPhase.setTag(R.id.operator_id, 5);
         mImageViewPI8.setTag(R.id.operator_id, 6);
-        mImageViewControledNot.setTag(R.id.operator_id, 7);
-        mImageViewControledPhase.setTag(R.id.operator_id, 8);
-        mImageViewControledZ.setTag(R.id.operator_id, 9);
-        mImageViewSwap.setTag(R.id.operator_id, 10);
+//        mImageViewControlledNot.setTag(R.id.operator_id, 7);
+//        mImageViewControlledPhase.setTag(R.id.operator_id, 8);
+//        mImageViewControlledZ.setTag(R.id.operator_id, 9);
+//        mImageViewSwap.setTag(R.id.operator_id, 10);
 
         // Add OnTouchListener to Images View
         mImageViewHadamard.setOnTouchListener(new MyOnTouchListener());
@@ -295,14 +295,14 @@ public class EditorFragment extends Fragment {
         mImageViewPauliZ.setOnTouchListener(new MyOnTouchListener());
         mImageViewPhase.setOnTouchListener(new MyOnTouchListener());
         mImageViewPI8.setOnTouchListener(new MyOnTouchListener());
-        mImageViewControledNot.setOnTouchListener(new MyOnTouchListener());
-        mImageViewControledPhase.setOnTouchListener(new MyOnTouchListener());
-        mImageViewControledZ.setOnTouchListener(new MyOnTouchListener());
-        mImageViewSwap.setOnTouchListener(new MyOnTouchListener());
+//        mImageViewControlledNot.setOnTouchListener(new MyOnTouchListener());
+//        mImageViewControlledPhase.setOnTouchListener(new MyOnTouchListener());
+//        mImageViewControlledZ.setOnTouchListener(new MyOnTouchListener());
+//        mImageViewSwap.setOnTouchListener(new MyOnTouchListener());
 
     }
 
-    private void showCircuitInDialog() {
+    private void showResultsInDialog() {
 
         /*
          * Lista que recebe os qubits da tela do circuito.
@@ -525,16 +525,10 @@ public class EditorFragment extends Fragment {
                         }
                     }
 
-                    Log.i("mLines antes", mLinesAdded.size() + "");
-                    Log.i("mCircuit antes", mCircuit.size() + "");
-
                     int indiceLastLineAdded = mLinesAdded.size() - 1;
                     mViewCircuitTimeLine.removeView(mLinesAdded.get(indiceLastLineAdded));
                     mLinesAdded.remove(indiceLastLineAdded);
                     mCircuit.remove(i);
-
-                    Log.i("mLines antes", mLinesAdded.size() + "");
-                    Log.i("mCircuit antes", mCircuit.size() + "");
 
                 }
 
@@ -567,14 +561,14 @@ public class EditorFragment extends Fragment {
             );
 
             // Set new size to CircuitTimeLine layout according to circuit size
-//            mViewCircuitTimeLine.setLayoutParams(
-//                    new FrameLayout.LayoutParams(
-//                            // Set same width
-//                            qubitView.getWidth() * 21,
-//                            // Set height
-//                            (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
-//                    )
-//            );
+            mViewCircuitTimeLine.setLayoutParams(
+                    new FrameLayout.LayoutParams(
+                            // Set same width
+                            qubitView.getWidth() * 21,
+                            // Set height
+                            (int) ( qubitView.getHeight() * 1.5 * (mCircuit.size() + 1) )
+                    )
+            );
 
         }
 
@@ -615,31 +609,17 @@ public class EditorFragment extends Fragment {
 
         if ( (int) viewOnDragging.getTag(R.id.operator_location) == OPERATOR_LOCATION_TOP) {
 
-            // *** Setting attributes to new ImageView operator
-            operatorTempImageView.setImageResource((int) viewOnDragging.getTag(R.id.xml_resource_id));
-            operatorTempImageView.setTag(R.id.operator_id, viewOnDragging.getTag(R.id.operator_id));
-            operatorTempImageView.setTag(R.id.operator_location, OPERATOR_LOCATION_CIRCUIT);
-            operatorTempImageView.setLayoutParams(
-                    new ConstraintLayout.LayoutParams(
-                            viewOnDragging.getWidth(),
-                            viewOnDragging.getHeight()
-                    )
-            );
-            operatorTempImageView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-
             // ***** Setting location attribute
             // Setting X location
             float
-                    // X para setar na imagem com uma borda de 5 pixels ao redor da imagem
-                    xTemp = event.getX() - ( (operatorTempImageView.getLayoutParams().width + 20) / 2 ),
+                    // X para setar na imagem com uma borda de 10 pixels ao redor da imagem
+                    xTemp = event.getX() - ( (viewOnDragging.getWidth() + 20) / 2 ),
 
                     // Pixels restantes ao obter o menor múltiplo da imagem e mais próximo do valor de xTemp
-                    xOverPixels = xTemp % (operatorTempImageView.getLayoutParams().width + 20),
+                    xOverPixels = xTemp % (viewOnDragging.getWidth() + 20),
 
-                    // X que será setado na imagem considerando a margem de 5 pixels
+                    // X que será setado na imagem considerando a margem de 10 pixels
                     xImage = ((int) (xTemp - xOverPixels)) + 10;
-
-            operatorTempImageView.setX( xImage );
 
             // Setting Y location
 
@@ -667,62 +647,85 @@ public class EditorFragment extends Fragment {
 
             yImage = mCircuit.get(indiceNearestLine).get(0).getY();
 
-            operatorTempImageView.setX( xImage );
-            operatorTempImageView.setY( yImage );
-
-            // Setting touchListener to new ImageView
-            operatorTempImageView.setOnTouchListener(new MyOnTouchListener());
-
             // Verify if exits operator in the position (xImage, yImage)
-            int imageToReplace = -1;
+            boolean freePosition = true;
             for (int i = 0; i < mCircuit.get(indiceNearestLine).size(); i++) {
-                if (mCircuit.get(indiceNearestLine).get(i).getX() == operatorTempImageView.getX()) {
+                if (mCircuit.get(indiceNearestLine).get(i).getX() == xImage) {
 
-                    imageToReplace = i;
+                    // Position is not free
+                    freePosition = false;
 
                     break;
                 }
             }
 
-            if (imageToReplace > -1) {
-                // Remove operator image view from ViewCircuitTimeLine
-                mViewCircuitTimeLine.removeView(mCircuit.get(indiceNearestLine).get(imageToReplace));
+//            if (viewOnDragging.getId() == R.id.imageViewOperatorControlledNot) {
+//                yImage = yImage + ( (mCircuit.get(indiceNearestLine).get(0).getHeight() - viewOnDragging.getHeight()) / 2 );
+//            }
 
-                // Add new operatorImageView to ViewCircuitTimeLine
-                mViewCircuitTimeLine.addView(operatorTempImageView);
+            if (freePosition) {
+                // *** Setting attributes to new ImageView operator
+                operatorTempImageView.setImageResource((int) viewOnDragging.getTag(R.id.xml_resource_id));
+                operatorTempImageView.setTag(R.id.operator_id, viewOnDragging.getTag(R.id.operator_id));
+                operatorTempImageView.setTag(R.id.operator_location, OPERATOR_LOCATION_CIRCUIT);
+                operatorTempImageView.setLayoutParams(
+                        new ConstraintLayout.LayoutParams(
+                                viewOnDragging.getWidth(),
+                                viewOnDragging.getHeight()
+                        )
+                );
+                operatorTempImageView.setBackgroundColor(getResources().getColor(R.color.colorBackgroundCircuit));
+                operatorTempImageView.setX( xImage );
+                operatorTempImageView.setY( yImage );
 
-                // Add new operatorImageView to circuit list
-                mCircuit.get(indiceNearestLine).set(imageToReplace, operatorTempImageView);
+                // Setting touchListener to new ImageView
+                operatorTempImageView.setOnTouchListener(new MyOnTouchListener());
 
-            } else {
+//                if (viewOnDragging.getId() == R.id.imageViewOperatorControlledNot) {
+//                    ImageView imageViewOperatorStem = new ImageView(mContext);
+//                    imageViewOperatorStem.setImageResource(R.drawable.ic_operator_stem);
+////                    imageViewOperatorStem.setLayoutParams(
+////                            new ConstraintLayout.LayoutParams(
+////                                    viewOnDragging.getWidth(),
+////                                    viewOnDragging.getHeight()
+////                            )
+////                    );
+//                    imageViewOperatorStem.setX(operatorTempImageView.getX() + ((operatorTempImageView.getWidth() - imageViewOperatorStem.getWidth()) / 2) );
+//                    imageViewOperatorStem.setY(mCircuit.get(indiceNearestLine - 1).get(0).getY() +
+//                            (mCircuit.get(indiceNearestLine - 1).get(0).getHeight() / 2) );
+//
+//                    operatorTempImageView.setTag(R.id.operator_stem, imageViewOperatorStem);
+//
+//                    mViewCircuitTimeLine.addView((ImageView) operatorTempImageView.getTag(R.id.operator_stem));
+//                }
+
                 // Add new operatorImageView to ViewCircuitTimeLine
                 mViewCircuitTimeLine.addView(operatorTempImageView);
 
                 // Add new operatorImageView to circuit list
                 mCircuit.get(indiceNearestLine).add(operatorTempImageView);
 
-            }
+                // Sort circuit line
+                Collections.sort(mCircuit.get(indiceNearestLine), new Comparator<ImageView>() {
+                    @Override
+                    public int compare(ImageView imageView1, ImageView imageView2) {
 
-            // Sort circuit line
-            Collections.sort(mCircuit.get(indiceNearestLine), new Comparator<ImageView>() {
-                @Override
-                public int compare(ImageView imageView1, ImageView imageView2) {
+                        return (int) ( imageView1.getX() - imageView2.getX() );
 
-                    return (int) ( imageView1.getX() - imageView2.getX() );
+                    }
+                });
+
+                // Setting new size to ViewCircuitTimeLine if it height < new imageView height
+                if (mViewCircuitTimeLine.getLayoutParams().height < operatorTempImageView.getLayoutParams().height) {
+
+                    mViewCircuitTimeLine.setLayoutParams(
+                            new FrameLayout.LayoutParams(
+                                    operatorTempImageView.getLayoutParams().width * 20,
+                                    (int) (operatorTempImageView.getLayoutParams().height * 1.5)
+                            )
+                    );
 
                 }
-            });
-
-            // Setting new size to ViewCircuitTimeLine if it height < new imageView height
-            if (mViewCircuitTimeLine.getLayoutParams().height < operatorTempImageView.getLayoutParams().height) {
-
-                mViewCircuitTimeLine.setLayoutParams(
-                        new FrameLayout.LayoutParams(
-                                operatorTempImageView.getLayoutParams().width * 20,
-                                (int) (operatorTempImageView.getLayoutParams().height * 1.5)
-                        )
-                );
-
             }
         }
     }

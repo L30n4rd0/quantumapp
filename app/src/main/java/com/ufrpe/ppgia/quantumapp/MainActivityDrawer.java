@@ -140,31 +140,35 @@ public class MainActivityDrawer extends AppCompatActivity
                     .replace(R.id.fragment_container, mFragment)
                     .commit();
 
-        } else if (id == R.id.sub_menu_controled_not) {
-            mFragment = new ControledNotFragment();
-            mFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, mFragment)
-                    .commit();
+        }
+        
+//        else if (id == R.id.sub_menu_controled_not) {
+//            mFragment = new ControledNotFragment();
+//            mFragmentManager.beginTransaction()
+//                    .replace(R.id.fragment_container, mFragment)
+//                    .commit();
+//
+//        } else if (id == R.id.sub_menu_controled_z) {
+//            mFragment = new ControledZFragment();
+//            mFragmentManager.beginTransaction()
+//                    .replace(R.id.fragment_container, mFragment)
+//                    .commit();
+//
+//        } else if (id == R.id.sub_menu_controled_phase) {
+//            mFragment = new ControledPhaseFragment();
+//            mFragmentManager.beginTransaction()
+//                    .replace(R.id.fragment_container, mFragment)
+//                    .commit();
+//
+//        } else if (id == R.id.sub_menu_swap) {
+//            mFragment = new SwapFragment();
+//            mFragmentManager.beginTransaction()
+//                    .replace(R.id.fragment_container, mFragment)
+//                    .commit();
+//
+//        }
 
-        } else if (id == R.id.sub_menu_controled_z) {
-            mFragment = new ControledZFragment();
-            mFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, mFragment)
-                    .commit();
-
-        } else if (id == R.id.sub_menu_controled_phase) {
-            mFragment = new ControledPhaseFragment();
-            mFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, mFragment)
-                    .commit();
-
-        } else if (id == R.id.sub_menu_swap) {
-            mFragment = new SwapFragment();
-            mFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, mFragment)
-                    .commit();
-
-        } else if (id == R.id.sub_menu_about_app) {
+        else if (id == R.id.sub_menu_about_app) {
             mFragment = new AboutFragment();
             mFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, mFragment)

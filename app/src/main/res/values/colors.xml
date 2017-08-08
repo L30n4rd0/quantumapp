@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#303f9f</color>
     <color name="colorBackgroundMain">#89b5993f</color>
+    <color name="colorBackgroundCircuit">#499543</color>
     <color name="colorTextMain">#000000</color>
 
 </resources>
