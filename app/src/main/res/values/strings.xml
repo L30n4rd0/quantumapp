@@ -22,7 +22,7 @@
     <string name="sub_menu_pauli_y">Pauli-Y</string>
     <string name="sub_menu_pauli_z">Pauli-Z</string>
     <string name="sub_menu_phase">Phase</string>
-    <string name="sub_menu_pi_8">π/8</string>
+    <string name="sub_menu_pi_8">π/8 ou T</string>
     <string name="sub_menu_controlled_not">Controlled-NOT</string>
     <string name="sub_menu_controlled_z">Controlled-Z</string>
     <string name="sub_menu_controlled_phase">Controlled-Phase</string>
@@ -35,43 +35,161 @@
     <string name="temp_string">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
 
     <string name="quantum_computating_history_text">
-        1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
-        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
-        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
-        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
-        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
-        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
-        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
-        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
-        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos.
+        O conceito de computador quântico teve inicio quando, em 1982, Feynman propôs
+        que sistemas quânticos não seriam eficientemente modelados em sistemas clássicos,
+        pois estes só poderiam ser modelados eficientemente por outro sistema quântico.\n
+
+        Deutsch propôs em 1985 um modelo para computação quântica universal,
+        seria o correspondente a Máquina de Turing(MT) para computação clássica,
+        este modelo adicionava algumas características à MT, as quais permitia a
+        representação de sobreposições.\n
+
+        Porém o modelo inicialmente proposto era bastante complexo, assim Deutsch
+        criou uma representação mais simples para a computação quântica que era semelhante
+        ao modelo de circuitos clássicos. Por serem de fácil compreensão os circuitos
+        quânticos vêm sendo cada vez mais utilizados.\n
+
+        Porém em 1994, quando Shor publicou seu algoritmo quântico para fatoração de
+        números inteiros grandes é que a computação quântica despertou interesse geral,
+        pois a fatoração é a base para os atuais sistemas de criptografia. O algoritmo de
+        Shor resolve o problema de fatoração de primos em tempo polinomial, enquanto
+        a solução clássica só é obtida em tempo exponencial.\n
+
+        A principal técnica utilizada para aumentar a velocidade dos computadores
+        clássicos é a miniaturização de circuitos, o que torna possível a utilização de
+        números cada vez maiores de circuitos nos processadores.\n
+
+        Porém devido ao limite de De Broglie, que diz que os atuais circuitos poderão
+        progredir até o tamanho de 20 nanômetros sem sacrifício funcional, após este
+        limite os elétrons deixam de agir como partículas e passam a agir como ondas,
+        quando obedecem então as leis da física quântica.\n
+
+        Os computadores quânticos não serão apenas mais velozes que as máquinas
+        atuais, eles tornarão possível uma nova forma de computação. Os circuitos
+        quânticos fornecem uma forma simples para que se possa compreender o
+        funcionamento de computadores quânticos.
+
     </string>
 
-    <string name="quantum_computating_fundamentals_text">
-        "Material is the metaphor.\n\n"
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
+    <string name="quantum_computating_fundamentals_text_paragraph_1">
+        O estudo e entendimento de circuitos quânticos envolve basicamente o conhecimento de
+        operações com Matrizes e álgebra linear.\n\n
+
+        MATRIZES\n\n
+
+
+        Uma matriz é uma tabela onde os elementos estão dispostos em linhas e colunas.
+        Toda matriz é indicada por uma letra maiúscula do alfabeto latino e pode ser
+        representada em geral utilizando-se parênteses ( ) ou colchetes [ ].\n
     </string>
 
+    <string name="quantum_computating_fundamentals_text_paragraph_2">
+        A ordem de uma matriz representa o número de linhas e colunas desta, assim
+        se temos A m×n , A é dita uma matriz de ordem m por n.\n
+        Duas matrizes A e B quaisquer só podem ser iguais se e somente se possuírem
+        a mesma ordem e todos seus elementos correspondentes forem iguais.\n
+        Existem diversos tipos especiais de matrizes, destacam-se como os mais importantes
+        tipos na área de Computação Quântica, as matrizes descritas abaixo:\n
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_square_matrix">
+        Matriz quadrada - toda aquela que possui um número de linhas e colunas igual.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_column_matrix">
+        Matriz coluna - toda aquela que possui apenas uma coluna.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_row_matrix">
+        Matriz linha - toda aquela quando possui apenas uma linha.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_transposed_matrix">
+        Matriz transposta - obtida transformando as linhas em colunas e as colunas
+        em linhas.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_identity_matrix">
+        Matriz identidade - é uma matriz quadrada onde todos os elementos da dia-
+        gonal principal são iguais a um e todos os outros iguais a zero.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_addition_subtraction">
+        \n\nAdição e subtração de matrizes\n
+
+        Para que duas matrizes A e B quaisquer possam ser adicionadas ou subtraídas,
+        é necessário que estas tenham o mesmo número de linhas e colunas, isto é, sejam da mesma ordem.
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_multiplication_matrix">
+        \n\nMultiplicação de matrizes\n
+
+        Para que duas matrizes A e B quaisquer possam ser multiplicadas é necessário
+        que o número de colunas de A seja igual ao número de linhas de B, ou seja A m×n
+        só pode ser multiplicada por B p×q se n=p.\n
+        Seja C a matriz resultante da multiplicação da matriz A 2×3 pela matriz B 3×2,
+        então C será uma matriz 2×2.
+
+    </string>
+
+    <!--Linar algebra-->
+    <string name="quantum_computating_fundamentals_text_linear_algebra_1">
+        \n\nÁlgebra Linear\n
+        Para compreender diversos aspectos da computação quântica é bastante desejável
+        o conhecimento de conceitos básicos da álgebra linear, os conceitos necessários
+        para compreensão de circuitos quânticos são apresentados a seguir.
+
+        Um vetor pode ser representado como um segmento de reta orientado em um
+        plano ou espaço. As componentes do vetor podem ainda ser definidas utilizando
+        um sistema de coordenadas cartesianas. Segue a representação gráfica de um vetor no R2
+        sendo (2, 3) a representação do ponto final do vetor e a origem (0, 0) o ponto
+        inicial do mesmo.\n
+
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_linear_algebra_2">
+        Um vetor pode também ser representado por uma matriz linha ou coluna.
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_internal_product">
+        \n\nProduto interno ou escalar\n
+        O produto interno entre dois vetores é representado por ".", assim se temos dois
+        vetores quaisquer:
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_external_product">
+        \n\nProduto externo ou vetorial\n
+        O produto externo entre dois vetores é representado por "×", assim se temos dois
+        vetores quaisquer:
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_tensor_product">
+        \n\nProduto tensorial\n
+        O produto tensorial entre dois vetores quaisquer é obitido por:
+    </string>
+
+    <!-- Text of hadamard operator-->
     <string name="hadamard_text_paragraph_1">
         "Um operador importante para o conceito da superposição é o operador de hadamard. A sua aplicação"
         "consegue-se a superposição de todos os possíveis valores armazenados em um registrador."
         "Segue, abaixo a sua representação gráfica."
     </string>
+
     <string name="hadamard_text_paragraph_2">
         "A matriz que define este operador é mostrada a seguir."
     </string>
+
     <string name="hadamard_text_paragraph_3">
         " Temos também sua representação na notação de Dirac."
     </string>
+
     <string name="hadamard_text_paragraph_4">
         "Sua aplicação nos vetores da base computacional cria um estado em superposição"
         "com leitura dos observáveis igualmente provável."
@@ -104,24 +222,21 @@
     <!-- **** Text of port Phase **** -->
     <string name="phase_text_paragraph_1">
        A porta Phase é representada no circuito pela letra S.
-        Seu símbolo no circuito e a sua matriz pode ser vista abaixo.
+        Seu símbolo no circuito e a sua matriz podem ser vistos abaixo.
     </string>
 
     <string name="phase_text_paragraph_2">
        Ao ser aplicada a porta Phase em um q-bit genérico obtém-se o resultado abaixo.
     </string>
 
-    <string name="pi_8_text">
-        1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget neque mattis,
-        sodales odio rhoncus, laoreet quam. Morbi mattis ligula odio, et viverra lacus interdum ut.
-        Nunc ultricies odio sit amet tortor suscipit placerat. Suspendisse ut urna orci. Phasellus
-        ultricies eleifend urna, non laoreet purus lobortis non. Ut lacinia nunc ac tellus sagittis
-        aliquam. Suspendisse eget consectetur ipsum, non bibendum orci. Maecenas dapibus gravida mi,
-        eu luctus nisi iaculis vitae. Phasellus ullamcorper imperdiet massa, in maximus lectus.
-        Cras hendrerit mattis magna, aliquam tempus nisl fermentum quis. In euismod egestas eros.
-        Ut semper fermentum justo et consectetur. Duis ut mauris malesuada, lacinia mi ut, varius ipsum.
-        Maecenas faucibus quis felis eget pellentesque. Class aptent taciti sociosqu ad litora
-        torquent per conubia nostra, per inceptos himenaeos.
+    <!-- **** Text of port PI8 ou T **** -->
+    <string name="pi_8_text_paragraph_1">
+        A porta π/8 é representada no circuito pela letra T.
+        Seu símbolo no circuito e a sua matriz podem ser vistos abaixo.
+    </string>
+
+    <string name="pi_8_text_paragraph_2">
+        Ao ser aplicada a porta Phase em um q-bit genérico obtém-se o resultado abaixo.
     </string>
 
     <string name="controlled_not_text">

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -21,8 +22,31 @@
 
             <TextView
                 android:id="@+id/textViewPi8Text"
-                android:text="@string/pi_8_text"
+                android:text="@string/pi_8_text_paragraph_1"
                 style="@style/textViewContentStyle" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_operator_pi_8" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_matriz_pi_oito" />
+
+            <TextView
+                android:text="@string/pi_8_text_paragraph_2"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_generic_qubit" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_example_pi8" />
 
         </LinearLayout>
     </ScrollView>

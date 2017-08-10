@@ -24,7 +24,10 @@
         <item name="android:layout_centerHorizontal">true</item>
         <!--<item name="android:background">@color/colorBackgroundMain</item>-->
         <item name="android:scrollbars">none</item>
-        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
         <item name="android:padding">2dp</item>
         <item name="android:background">@drawable/rounded_corner_bottom</item>
     </style>
@@ -33,9 +36,9 @@
     <style name="textViewHeaderStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:layout_marginTop">2dp</item>
-        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
         <item name="android:layout_marginBottom">0dp</item>
         <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
         <item name="android:textSize">24sp</item>

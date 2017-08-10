@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,8 +21,160 @@
 
             <TextView
                 android:id="@+id/textViewHistoryText"
-                android:text="@string/quantum_computating_fundamentals_text"
+                android:text="@string/quantum_computating_fundamentals_text_paragraph_1"
                 style="@style/textViewContentStyle" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_matrix_model" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_paragraph_2"
+                style="@style/textViewContentStyle" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_square_matrix"
+                style="@style/textViewContentStyle" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_column_matrix"
+                style="@style/textViewContentStyle" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_row_matrix"
+                style="@style/textViewContentStyle" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_transposed_matrix"
+                style="@style/textViewContentStyle" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="500dp"
+                        app:srcCompat="@drawable/ic_transposed_matrix" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_identity_matrix"
+                style="@style/textViewContentStyle" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_addition_subtraction"
+                style="@style/textViewContentStyle" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="700dp"
+                        app:srcCompat="@drawable/ic_addition_subtraction_matrix" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_multiplication_matrix"
+                style="@style/textViewContentStyle" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="700dp"
+                        app:srcCompat="@drawable/ic_multiplication_matrix" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_linear_algebra_1"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_vector_representation" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_linear_algebra_2"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_vector_representation_matrix" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_internal_product"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_internal_product" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_external_product"
+                style="@style/textViewContentStyle" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="500dp"
+                        app:srcCompat="@drawable/ic_external_product" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_tensor_product"
+                style="@style/textViewContentStyle" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        style="@style/imageViewDefaultStyle"
+                        android:layout_width="700dp"
+                        app:srcCompat="@drawable/ic_tensor_product" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
