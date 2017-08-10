@@ -175,6 +175,32 @@
         O produto tensorial entre dois vetores quaisquer é obitido por:
     </string>
 
+    <string name="quantum_computating_fundamentals_text_dirac_notation_1">
+        \n\nNotação de Dirac\n
+        Na computação quântica é comumente utilizada a notação de Dirac para representar
+        estados quânticos, essa notação é utilizada devido a praticidade de representar
+        estados quânticos e transformações. Na literatura a notação de
+        Dirac pode também ser encontrada como notação braket, devido a sua forma de
+        representação de vetores.\n
+
+        Representação de um vetor na notação de Dirac (lê-se "ket vê"):
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_dirac_notation_2">
+        Nesta notação tem-se ainda o vetor representado na forma transposto conjugado (lê-se "bra vê"):
+    </string>
+
+
+    <string name="quantum_computating_fundamentals_text_dirac_notation_3">
+        Pode-se representar as operações vetoriais adição, subtração e multiplicação por escalar
+        como se segue:
+    </string>
+
+
+    <string name="quantum_computating_fundamentals_text_dirac_notation_4">
+        O produto tensorial entre dois vetores também é apresentado na notação de Dirac:
+    </string>
+
     <!-- Text of hadamard operator-->
     <string name="hadamard_text_paragraph_1">
         "Um operador importante para o conceito da superposição é o operador de hadamard. A sua aplicação"
