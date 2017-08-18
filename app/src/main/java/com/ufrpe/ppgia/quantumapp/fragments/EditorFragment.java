@@ -351,48 +351,69 @@ public class EditorFragment extends Fragment {
 		 * Produto tensorial
 		 */
         matrixCircuitResultTensor = utils.tensor(listLinesResults);
-        utils.printMatrix(matrixCircuitResultTensor);
+//        Log.i("Result", "Tensorial");
+//        utils.printMatrix(matrixCircuitResultTensor);
 
 		/*
 		 * Calculo das porcentagens
 		 */
         matrixCircuitResultPercent = utils.percentCalculator(matrixCircuitResultTensor);
-        utils.printMatrix(matrixCircuitResultPercent);
+//        Log.i("Result", "Matrix and Percent");
+//        utils.printMatrix(matrixCircuitResultPercent);
+//        utils.printMatrix(matrixCircuitResultTensor);
 
-        String stringCircuitStatus = "Circuito debugging\n";
+        /*
+		 * Circuito Debugging
+		 */
+//        String stringCircuitStatus = "Circuito Debugging\n";
+//        for (int i = 0; i < mCircuit.size(); i++) {
+//            for (int j = 0; j < mCircuit.get(i).size(); j++) {
+//                if (j != 0) {
+//                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.operator_id) + " ";
+//
+//                } else {
+//                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.qubit_value) + " ";
+//
+//                }
+//            }
+//            stringCircuitStatus += "\n";
+//
+//        }
 
-        for (int i = 0; i < mCircuit.size(); i++) {
-            for (int j = 0; j < mCircuit.get(i).size(); j++) {
-                if (j != 0) {
-                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.operator_id) + " ";
+        String stringMatrixResult = "Amplitude\t\tEstado\t\tPercent\n";
 
-                } else {
-                    stringCircuitStatus += (int) mCircuit.get(i).get(j).getTag(R.id.qubit_value) + " ";
-
-                }
-            }
-            stringCircuitStatus += "\n";
-
-        }
-
-        String stringResult = "Matriz\tPercent\n";
+        int bitsQuantity = (int) utils.log2( matrixCircuitResultTensor.getRowDimension() );
 
         for (int i = 0; i < matrixCircuitResultTensor.getRowDimension(); i++) {
 
             for (int j = 0; j < matrixCircuitResultTensor.getColumnDimension(); j++) {
 
-                stringResult += matrixCircuitResultTensor.get(i, j) + "\t\t\t" + matrixCircuitResultPercent.get(i, j) + "%\n";
+                String ketValue = utils.toBinario(i), tempString = "";
+
+                for (int k = 0; k < bitsQuantity - ketValue.length(); k++) {
+                    tempString += 0 + "";
+                }
+
+                ketValue = tempString + ketValue;
+
+                stringMatrixResult +=
+                        utils.formatDouble( matrixCircuitResultTensor.get(i, j) ) + "\t\t\t\t\t" +
+                         "|" + ketValue + ">" + "\t\t\t\t\t" +
+                        matrixCircuitResultPercent.get(i, j) + "%\n";
 
             }
         }
 
-        stringResult += "\n";
+//        Log.i("Binario", utils.toBinario(1));
+
+        stringMatrixResult += "\n";
 
 //        View viewDialog = mInflater.inflate(C0453R.layout.dialog_test, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
 //        alertDialogBuilder.setView(viewDialog);
         alertDialogBuilder.setTitle("Circuito Resultado");
-        alertDialogBuilder.setMessage(stringResult + "...................................\n" + stringCircuitStatus);
+//        alertDialogBuilder.setMessage(stringMatrixResult + "...................................\n" + stringCircuitStatus);
+        alertDialogBuilder.setMessage(stringMatrixResult);
         alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

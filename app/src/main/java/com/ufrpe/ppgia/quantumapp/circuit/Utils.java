@@ -1,7 +1,10 @@
 package com.ufrpe.ppgia.quantumapp.circuit;
 
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import Jama.Matrix;
 
@@ -100,25 +103,29 @@ public class Utils {
 	 * @return matrix
 	 */
 	public Matrix percentCalculator(Matrix matrix){
-		
+
+        Matrix matrixTemp = matrix.copy();
+
 		int denominator = 0;
 		
-		for (int i = 0; i < matrix.getRowDimension(); i++) {
+		for (int i = 0; i < matrixTemp.getRowDimension(); i++) {
 			
-			for (int j = 0; j < matrix.getColumnDimension(); j++) {
+			for (int j = 0; j < matrixTemp.getColumnDimension(); j++) {
 				
-				if (matrix.get(i, j) != 0) {
-					matrix.set(i, j, 1.0);
+				if (matrixTemp.get(i, j) != 0.0) {
+					matrixTemp.set(i, j, 1.0);
 					denominator += 1;
-				}  else {
-					matrix.set(i, j, 0.0);
+
 				}
+//				else {
+//					matrixTemp.set(i, j, 0.0);
+//				}
 				
 			}
 			
 		}
 		
-		return matrix.times(100.0/denominator);
+		return matrixTemp.times(100.0/denominator);
 		
 	}
 
@@ -131,5 +138,51 @@ public class Utils {
 		m.print(m.getRowDimension(), m.getColumnDimension());
 
 	}
+
+    /**
+     * Método que formata um valor double uma casa decimal
+     * @param inputDouble
+     */
+    public double formatDouble(double inputDouble) {
+
+        // Funciona para números menores de 1000
+
+        NumberFormat format = NumberFormat.getInstance(Locale.US);
+        format.setMaximumFractionDigits(1);
+        format.setMinimumFractionDigits(1);
+//		format.setMaximumIntegerDigits(2);
+        format.setRoundingMode(RoundingMode.HALF_UP);
+        return Double.valueOf(format.format(inputDouble));
+
+    }
+
+    /**
+     * Converte um número inteiro para binário
+     * @param numero
+     */
+    public String toBinario(int numero) {
+        int d = numero;
+
+        if (d == 0) {
+            return  0 + "";
+        }
+
+        StringBuffer binario = new StringBuffer(); // guarda os dados
+        while (d > 0) {
+            int b = d % 2;
+            binario.append(b);
+            d = d >> 1; // é a divisão que você deseja
+        }
+
+        return binario.reverse().toString(); // inverte a ordem
+    }
+
+    /**
+     * Calcula o log na base 2 de número
+     * @param number
+     */
+    public double log2(int number) {
+        return (Math.log(number) / Math.log(2));
+    }
 
 }

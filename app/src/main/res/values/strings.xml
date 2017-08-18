@@ -10,13 +10,13 @@
     <string name="site">quantumapp.ufrpe.br</string>
 
     <string name="menu_circuit">Circuit</string>
-    <string name="sub_menu_circuit_editor">Circuit Editor</string>
+    <string name="sub_menu_circuit_editor">Editor de Circuitos</string>
 
-    <string name="menu_quantum">Quantum Computating</string>
-    <string name="sub_menu_history">History</string>
-    <string name="sub_menu_fundamentals">Fundamentals</string>
+    <string name="menu_quantum">Computação Quântica</string>
+    <string name="sub_menu_history">História</string>
+    <string name="sub_menu_fundamentals">Fundamentos</string>
 
-    <string name="menu_operators">Operators</string>
+    <string name="menu_operators">Operadores</string>
     <string name="sub_menu_hadamard">Hadamard</string>
     <string name="sub_menu_pauli_matrix">Pauli Matrix</string>
     <string name="sub_menu_pauli_y">Pauli-Y</string>
@@ -28,9 +28,9 @@
     <string name="sub_menu_controlled_phase">Controlled-Phase</string>
     <string name="sub_menu_swap">Swap</string>
 
-    <string name="menu_about">About</string>
+    <string name="menu_about">Sobre</string>
     <string name="sub_menu_about_app">App</string>
-    <string name="sub_menu_about_team">Team</string>
+    <string name="sub_menu_about_team">Equipe</string>
 
     <string name="temp_string">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
 
@@ -49,7 +49,7 @@
         ao modelo de circuitos clássicos. Por serem de fácil compreensão os circuitos
         quânticos vêm sendo cada vez mais utilizados.\n
 
-        Porém em 1994, quando Shor publicou seu algoritmo quântico para fatoração de
+        Entretanto em 1994, quando Shor publicou seu algoritmo quântico para fatoração de
         números inteiros grandes é que a computação quântica despertou interesse geral,
         pois a fatoração é a base para os atuais sistemas de criptografia. O algoritmo de
         Shor resolve o problema de fatoração de primos em tempo polinomial, enquanto
@@ -59,7 +59,7 @@
         clássicos é a miniaturização de circuitos, o que torna possível a utilização de
         números cada vez maiores de circuitos nos processadores.\n
 
-        Porém devido ao limite de De Broglie, que diz que os atuais circuitos poderão
+        Mas devido ao limite de De Broglie, que diz que os atuais circuitos poderão
         progredir até o tamanho de 20 nanômetros sem sacrifício funcional, após este
         limite os elétrons deixam de agir como partículas e passam a agir como ondas,
         quando obedecem então as leis da física quântica.\n
@@ -115,8 +115,8 @@
     </string>
 
     <string name="quantum_computating_fundamentals_text_identity_matrix">
-        Matriz identidade - é uma matriz quadrada onde todos os elementos da dia-
-        gonal principal são iguais a um e todos os outros iguais a zero.
+        Matriz identidade - é uma matriz quadrada onde todos os elementos da
+        diagonal principal são iguais a um e todos os outros iguais a zero.
 
     </string>
 
@@ -175,6 +175,7 @@
         O produto tensorial entre dois vetores quaisquer é obitido por:
     </string>
 
+    <!--Dirac notation-->
     <string name="quantum_computating_fundamentals_text_dirac_notation_1">
         \n\nNotação de Dirac\n
         Na computação quântica é comumente utilizada a notação de Dirac para representar
@@ -190,16 +191,58 @@
         Nesta notação tem-se ainda o vetor representado na forma transposto conjugado (lê-se "bra vê"):
     </string>
 
-
     <string name="quantum_computating_fundamentals_text_dirac_notation_3">
         Pode-se representar as operações vetoriais adição, subtração e multiplicação por escalar
         como se segue:
     </string>
 
-
     <string name="quantum_computating_fundamentals_text_dirac_notation_4">
         O produto tensorial entre dois vetores também é apresentado na notação de Dirac:
     </string>
+
+    <!--Quantum bits-->
+    <string name="quantum_computating_fundamentals_text_qubits_1">
+        \n\nBits quânticos\n
+        Para a computação clássica o conceito fundamental é o bit, para a computação
+        quântica o conceito análogo é o bit quântico. As referências aos bits quânticos
+        freqüentemente são realizadas de maneira abreviada QuBit ou ainda q-bit.\n
+        Um bit clássico possui apenas dois estados possíveis, que são representados
+        por 0 ou 1, q-bits possuem como possíveis estados os vetores 0 e 1 , que podem
+        ser ditos equivalentes aos estados clássicos 0 e 1 e representados como:
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_qubits_2">
+        Porém um q-bit pode estar em um estado chamado superposição, onde este é
+        uma combinação linear de estados.\n
+        Veja um q-bit genérico abaixo, onde α e β são números complexos,
+        ψ é denominado superposição de estados.
+        Um q-bit pode ser definido matematicamente como um vetor unitário no
+        espaço dos números complexos . Os vetores 0 e 1 são denominados base computacional,
+        pois qualquer outro vetor pode ser criado através de uma combinação linear destes.
+    </string>
+
+    <!--Quantum ports-->
+    <string name="quantum_computating_fundamentals_text_quantum_ports_1">
+        \nPortas Quânticas\n
+        Nos computadores clássicos o processamento da informação ocorre através de
+        circuitos lógicos que são agrupamentos de portas lógicas as quais executam
+        operações sobre bits.\n
+
+        Para os circuitos clássicos cinco portas lógicas são os principais blocos construtores,
+        tais portas obedecem a álgebra booleana e podem ter suas entradas e saídas
+        descritas em tabelas verdade.
+    </string>
+
+    <string name="quantum_computating_fundamentals_text_quantum_ports_2">
+        Os circuitos da computação quântica também são agrupamentos de portas
+        quânticas, as quais realizam operações unitárias sobre q-bits. Assim
+        portas quânticas podem ser vistas como operadores ou matrizes unitárias, este
+        fato é de grande importância pois assim todas as matrizes unitárias 2×2 podem
+        representar portas quânticas de um q-bit.
+        Um exemplo é a porta Pauli X, que equivale a porta "not" da computação clássica.
+        Outras portas são apresentadas com mais detalhes nos submenus do aplicativo.
+    </string>
+
 
     <!-- Text of hadamard operator-->
     <string name="hadamard_text_paragraph_1">
@@ -392,8 +435,21 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
-    <string name="sub_menu_about">About</string>
-    <string name="about_text">About Text ...... test ... test</string>
+    <string name="sub_menu_about">Sobre</string>
+    <string name="about_text">
+        Aplicativo desenvolvido para cadeira de Fundamentos de Programação Aplicada do
+        Programa de Pós Graduação em Informática Aplicada - PPGIA, da Universidade Federal
+        Rural de Pernambuco - UFRPE.
+    </string>
+
+    <string name="team_text_1">
+        Leoanardo Souza, mestrando em Informátic Aplicada.
+    </string>
+
+    <string name="team_text_2">
+        Luciano Serafim, mestrando em Informátic Aplicada.
+    </string>
+
     <string name="button_simulate">Simular</string>
 
 </resources>

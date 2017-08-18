@@ -10,15 +10,17 @@ import Jama.Matrix;
  */
 public class Gates {
 
-	private static Gates instance;
+	private static Gates instance = null;
 
-	public Gates() {
+	private Gates() {
 
 	}
 
 	public static Gates getInstance() {
 
-		instance = new Gates();
+		if (instance == null) {
+            instance = new Gates();
+        }
 
 		return instance;
 

@@ -25,6 +25,7 @@ import com.ufrpe.ppgia.quantumapp.fragments.FundamentalsFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.HadamardFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.HistoryFragment;
 import com.ufrpe.ppgia.quantumapp.fragments.Pi8Fragment;
+import com.ufrpe.ppgia.quantumapp.fragments.TeamFragment;
 
 public class MainActivityDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -170,6 +171,12 @@ public class MainActivityDrawer extends AppCompatActivity
 
         else if (id == R.id.sub_menu_about_app) {
             mFragment = new AboutFragment();
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, mFragment)
+                    .commit();
+
+        } else if (id == R.id.sub_menu_about_team) {
+            mFragment = new TeamFragment();
             mFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, mFragment)
                     .commit();

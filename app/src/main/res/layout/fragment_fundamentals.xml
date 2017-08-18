@@ -226,6 +226,59 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_qubits_1"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_qubits" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_qubits_2"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_generic_qubit_complex" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_quantum_ports_1"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="110dp"
+                app:srcCompat="@drawable/ic_classic_port_not" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_classic_port_nand" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_classic_port_nor" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_classic_port_and" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_classic_port_or" />
+
+            <TextView
+                android:text="@string/quantum_computating_fundamentals_text_quantum_ports_2"
+                style="@style/textViewContentStyle" />
+
+            <ImageView
+                style="@style/imageViewDefaultStyle"
+                app:srcCompat="@drawable/ic_example_pauli_x_matrix" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
