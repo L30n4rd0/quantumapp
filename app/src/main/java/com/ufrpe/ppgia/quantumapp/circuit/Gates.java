@@ -97,10 +97,9 @@ public class Gates {
 
 	public Matrix piEight(Matrix ket) {
 
-		Complex complex = new Complex(1, 1, 1);
+		Complex complex = new Complex(1.0, 1.0, 0.4);
 
-		double[][] matrix = { { 1, 0 },
-				{ 0, Math.exp((complex.getImaginary() * Math.PI) / 4 ) } };
+		double[][] matrix = { { 1, 0 }, { 0, (1 + complex.getImaginary())/Math.sqrt(2) } };
 
 		Matrix A = new Matrix(matrix);
 
