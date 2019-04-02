@@ -9,11 +9,11 @@
 
 * Menu
 
-![Menu](Screenshots/menu.png | width=100)
+![Menu](Screenshots/menu.png =300x)
 
 * Editor de circuito
 
-![Menu](Screenshots/circuit_editor.png | width=100)
+![Menu](Screenshots/circuit_editor.png =300x)
 
 * Os qubits podem ser alterados clicando sobre eles
 
