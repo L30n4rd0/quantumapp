@@ -9,29 +9,29 @@
 
 * Menu
 
-![Menu](Screenshots/menu_copy.png)
+![Menu](Screenshots_350px/menu_copy.png)
 
 * Editor de circuito
 
-![Menu](Screenshots/circuit_editor.png)
+![Menu](Screenshots_350px/circuit_editor.png)
 
 * Os qubits podem ser alterados clicando sobre eles
 
-![Menu](Screenshots/circuit_options_changer.png)
+![Menu](Screenshots_350px/circuit_options_changer.png)
 
 * Exemplo de circuito
 
-![Menu](Screenshots/circuit_example.png)
+![Menu](Screenshots_350px/circuit_example.png)
 
 * Resultados da simulação
 
-![Menu](Screenshots/circuit_results.png)
+![Menu](Screenshots_350px/circuit_results.png)
 
 * Aprenda os fundamentos de computação quântica e portas quânticas
 
-![Menu](Screenshots/quantum_computing_fundamentals_hadamard_gate.png)
+![Menu](Screenshots_350px/quantum_computing_fundamentals_hadamard_gate.png)
 
-![Menu](Screenshots/quantum_computing_fundamentals_pauli_gates.png)
+![Menu](Screenshots_350px/quantum_computing_fundamentals_pauli_gates.png)
 
 
 
