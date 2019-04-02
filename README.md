@@ -9,7 +9,7 @@
 
 * Menu
 
-![Menu](Screenshots_350px/menu_copy.png)
+![Menu](Screenshots_350px/menu.png)
 
 * Editor de circuito
 
